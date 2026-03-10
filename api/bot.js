@@ -1,5 +1,11 @@
 import { Telegraf } from "telegraf";
 import fs from "fs";
+import { fileURLToPath } from "url";
+import { dirname, join } from "path";
+
+// Resolve __dirname in ES module
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
 const userState = {};
@@ -7,7 +13,6 @@ const userState = {};
 // ================= START COMMAND =================
 bot.start(async (ctx) => {
   userState[ctx.from.id] = {};
-
   await ctx.reply("Welcome to Exit Exam Preparation Bot", {
     reply_markup: {
       keyboard: [["Start Exam Menu"]],
@@ -33,7 +38,9 @@ bot.action("exit_exam", async (ctx) => {
   await ctx.answerCbQuery();
   await ctx.reply("Select Exit Exam", {
     reply_markup: {
-      inline_keyboard: [[{ text: "Last Year Exit Exam", callback_data: "exit_2025" }]],
+      inline_keyboard: [
+        [{ text: "Last Year Exit Exam", callback_data: "exit_2025" }],
+      ],
     },
   });
 });
@@ -54,22 +61,26 @@ bot.action("model_exam", async (ctx) => {
 
 // ================= LOAD EXAMS =================
 bot.action("exit_2025", async (ctx) => {
-  await loadExam(ctx, "./exams/exit/2025.json", "Exit Exam Started");
+  await loadExam(ctx, "exams/exit/2025.json", "Exit Exam Started");
 });
+
 bot.action("model_aau", async (ctx) => {
-  await loadExam(ctx, "./exams/model/aau.json", "AAU Model Exam Started");
+  await loadExam(ctx, "exams/model/aau.json", "AAU Model Exam Started");
 });
+
 bot.action("model_aastu", async (ctx) => {
-  await loadExam(ctx, "./exams/model/aastu.json", "AASTU Model Exam Started");
+  await loadExam(ctx, "exams/model/aastu.json", "AASTU Model Exam Started");
 });
+
 bot.action("model_astu", async (ctx) => {
-  await loadExam(ctx, "./exams/model/astu.json", "ASTU Model Exam Started");
+  await loadExam(ctx, "exams/model/astu.json", "ASTU Model Exam Started");
 });
 
 // ================= LOAD EXAM FUNCTION =================
-async function loadExam(ctx, file, message) {
+async function loadExam(ctx, relativeFilePath, message) {
   await ctx.answerCbQuery();
-  const questions = JSON.parse(fs.readFileSync(file));
+  const filePath = join(__dirname, "..", relativeFilePath);
+  const questions = JSON.parse(fs.readFileSync(filePath, "utf-8"));
 
   userState[ctx.from.id] = {
     questions: questions,
@@ -87,7 +98,6 @@ async function sendQuestion(ctx) {
   if (!state) return;
 
   const q = state.questions[state.index];
-
   await ctx.reply(
     `Question ${state.index + 1} / ${state.questions.length}\n\n${q.question}`,
     {
@@ -104,6 +114,7 @@ async function sendQuestion(ctx) {
 // ================= HANDLE ANSWERS =================
 bot.action(/ans_(.+)/, async (ctx) => {
   await ctx.answerCbQuery();
+
   const state = userState[ctx.from.id];
   if (!state) return;
 
@@ -122,7 +133,9 @@ bot.action(/ans_(.+)/, async (ctx) => {
   if (state.index < state.questions.length) {
     await sendQuestion(ctx);
   } else {
-    await ctx.reply(`Exam Finished\n\nScore: ${state.score}/${state.questions.length}`);
+    await ctx.reply(
+      `Exam Finished\n\nScore: ${state.score}/${state.questions.length}`
+    );
     delete userState[ctx.from.id];
   }
 });
