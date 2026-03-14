@@ -89,9 +89,11 @@ async function sendQuestion(ctx, examName, index, messageId) {
       return
     }
 
-    // Use __dirname so Vercel serverless can read the file
-    const filePath = path.join(__dirname, relativePath)
-
+    const filePath = path.join(process.cwd(), relativePath);
+    
+console.log("Runtime cwd:       ", process.cwd());
+console.log("Trying file path:  ", filePath);
+console.log("Does file exist?   ", fs.existsSync(filePath) ? "YES" : "NO");
     const questions = JSON.parse(fs.readFileSync(filePath, "utf8"))
 
     const q = questions[index]
