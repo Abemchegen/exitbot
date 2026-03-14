@@ -63,7 +63,6 @@ bot.action("model_exam", async (ctx) => {
       inline_keyboard: [
         [{ text: "AAU Exit Exam", callback_data: "model_aau" }],
         [{ text: "AASTU Exit Exam", callback_data: "model_aastu" }],
-        [{ text: "ASTU Exit Exam", callback_data: "model_astu" }]
       ]
     }
   })
@@ -84,34 +83,43 @@ bot.action("model_aastu", async (ctx) =>
   loadExam(ctx, "exams/model/aastu.json", "AASTU Model Exam Started")
 )
 
-bot.action("model_astu", async (ctx) =>
-  loadExam(ctx, "exams/model/astu.json", "ASTU Model Exam Started")
-)
 
 
 // LOAD EXAM FUNCTION
 async function loadExam(ctx, relativePath, message) {
+  console.log(fs.readdirSync(process.cwd()))
 
-  await ctx.answerCbQuery()
+  try {
 
-  const filePath = path.join(process.cwd(), relativePath)
+    await ctx.answerCbQuery()
 
-  const questions = JSON.parse(
-    fs.readFileSync(filePath, "utf8")
-  )
+    const filePath = path.join(process.cwd(), relativePath)
 
-  userState[ctx.from.id] = {
-    questions: questions,
-    index: 0,
-    score: 0
+    console.log("Loading file:", filePath)
+
+    const questions = JSON.parse(
+      fs.readFileSync(filePath, "utf8")
+    )
+
+    userState[ctx.from.id] = {
+      questions,
+      index: 0,
+      score: 0
+    }
+
+    await ctx.reply(message)
+
+    await sendQuestion(ctx)
+
+  } catch (error) {
+
+    console.error("Exam loading error:", error)
+
+    await ctx.reply("Exam failed to load.")
+
   }
 
-  await ctx.reply(message)
-
-  await sendQuestion(ctx)
-
 }
-
 
 // SEND QUESTION
 async function sendQuestion(ctx) {
