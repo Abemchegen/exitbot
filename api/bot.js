@@ -5,6 +5,15 @@ const path = require("path")
 const bot = new Telegraf(process.env.BOT_TOKEN)
 
 
+// EXAM FILE MAP
+const exams = {
+  exit_2025: "exams/exit/2025.json",
+  model_aau: "exams/model/aau.json",
+  model_aastu: "exams/model/aastu.json"
+}
+
+
+
 // START
 bot.start(async (ctx) => {
 
@@ -16,6 +25,7 @@ bot.start(async (ctx) => {
   })
 
 })
+
 
 
 // START MENU
@@ -33,6 +43,7 @@ bot.hears(/Start Exam Menu/, async (ctx) => {
 })
 
 
+
 // EXIT EXAM MENU
 bot.action("exit_exam", async (ctx) => {
 
@@ -47,6 +58,7 @@ bot.action("exit_exam", async (ctx) => {
   })
 
 })
+
 
 
 // MODEL EXAM MENU
@@ -66,6 +78,7 @@ bot.action("model_exam", async (ctx) => {
 })
 
 
+
 // START EXAM
 bot.action(/start_(.+)/, async (ctx) => {
 
@@ -80,36 +93,57 @@ bot.action(/start_(.+)/, async (ctx) => {
 })
 
 
-// SEND QUESTION
+
+// LOAD QUESTION
 async function sendQuestion(ctx, examName, index, messageId) {
 
-  const filePath = path.join(process.cwd(), `exams/${examName}.json`)
+  try {
 
-  const questions = JSON.parse(
-    fs.readFileSync(filePath, "utf8")
-  )
+    const relativePath = exams[examName]
 
-  const q = questions[index]
+    if (!relativePath) {
 
-  const text =
-    `Question ${index + 1} / ${questions.length}\n\n${q.question}`
+      await ctx.reply("Exam not found.")
+      return
 
-  const keyboard = {
-    inline_keyboard: q.options.map((opt, i) => [{
-      text: opt,
-      callback_data: `ans_${examName}_${index}_${i}_${messageId}`
-    }])
+    }
+
+    const filePath = path.join(process.cwd(), relativePath)
+
+    const questions = JSON.parse(
+      fs.readFileSync(filePath, "utf8")
+    )
+
+    const q = questions[index]
+
+    const text =
+      `Question ${index + 1} / ${questions.length}\n\n${q.question}`
+
+    const keyboard = {
+      inline_keyboard: q.options.map((opt, i) => [{
+        text: opt,
+        callback_data: `ans_${examName}_${index}_${i}_${messageId}`
+      }])
+    }
+
+    await ctx.telegram.editMessageText(
+      ctx.chat.id,
+      messageId,
+      null,
+      text,
+      { reply_markup: keyboard }
+    )
+
+  } catch (error) {
+
+    console.error("Question load error:", error)
+
+    await ctx.reply("Failed to load question.")
+
   }
 
-  await ctx.telegram.editMessageText(
-    ctx.chat.id,
-    messageId,
-    null,
-    text,
-    { reply_markup: keyboard }
-  )
-
 }
+
 
 
 // HANDLE ANSWER
@@ -117,53 +151,68 @@ bot.action(/ans_(.+)/, async (ctx) => {
 
   await ctx.answerCbQuery()
 
-  const [examName, indexStr, answerStr, messageIdStr] =
-    ctx.match[1].split("_")
+  try {
 
-  const index = parseInt(indexStr)
-  const answer = parseInt(answerStr)
-  const messageId = parseInt(messageIdStr)
+    const [examName, indexStr, answerStr, messageIdStr] =
+      ctx.match[1].split("_")
 
-  const filePath = path.join(process.cwd(), `exams/${examName}.json`)
+    const index = parseInt(indexStr)
+    const answer = parseInt(answerStr)
+    const messageId = parseInt(messageIdStr)
 
-  const questions = JSON.parse(
-    fs.readFileSync(filePath, "utf8")
-  )
+    const relativePath = exams[examName]
 
-  const q = questions[index]
+    if (!relativePath) return
 
-  let resultText
+    const filePath = path.join(process.cwd(), relativePath)
 
-  if (answer === q.correct) {
-
-    resultText = "Correct"
-
-  } else {
-
-    resultText = `Wrong\nCorrect answer: ${q.options[q.correct]}`
-
-  }
-
-  await ctx.answerCbQuery(resultText)
-
-  const nextIndex = index + 1
-
-  if (nextIndex < questions.length) {
-
-    await sendQuestion(ctx, examName, nextIndex, messageId)
-
-  } else {
-
-    await ctx.telegram.editMessageText(
-      ctx.chat.id,
-      messageId,
-      null,
-      "Exam Finished"
+    const questions = JSON.parse(
+      fs.readFileSync(filePath, "utf8")
     )
+
+    const q = questions[index]
+
+    let resultText
+
+    if (answer === q.correct) {
+
+      resultText = "Correct"
+
+    } else {
+
+      resultText = `Wrong\nCorrect answer: ${q.options[q.correct]}`
+
+    }
+
+    await ctx.answerCbQuery(resultText)
+
+    const nextIndex = index + 1
+
+    if (nextIndex < questions.length) {
+
+      await sendQuestion(ctx, examName, nextIndex, messageId)
+
+    } else {
+
+      await ctx.telegram.editMessageText(
+        ctx.chat.id,
+        messageId,
+        null,
+        "Exam Finished"
+      )
+
+    }
+
+  } catch (error) {
+
+    console.error("Answer error:", error)
+
+    await ctx.reply("Error processing answer.")
 
   }
 
 })
+
 
 
 // WEBHOOK HANDLER
