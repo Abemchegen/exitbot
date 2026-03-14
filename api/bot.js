@@ -4,13 +4,9 @@ const path = require("path")
 
 const bot = new Telegraf(process.env.BOT_TOKEN)
 
-const userState = {}
-
 
 // START
 bot.start(async (ctx) => {
-
-  userState[ctx.from.id] = {}
 
   await ctx.reply("Welcome to Exit Exam Preparation Bot", {
     reply_markup: {
@@ -45,7 +41,7 @@ bot.action("exit_exam", async (ctx) => {
   await ctx.reply("Select Exit Exam", {
     reply_markup: {
       inline_keyboard: [
-        [{ text: "Last Year Exit Exam", callback_data: "exit_2025" }]
+        [{ text: "Last Year Exit Exam", callback_data: "start_exit_2025" }]
       ]
     }
   })
@@ -61,8 +57,8 @@ bot.action("model_exam", async (ctx) => {
   await ctx.reply("Select Model Exit Exam", {
     reply_markup: {
       inline_keyboard: [
-        [{ text: "AAU Exit Exam", callback_data: "model_aau" }],
-        [{ text: "AASTU Exit Exam", callback_data: "model_aastu" }],
+        [{ text: "AAU Exit Exam", callback_data: "start_model_aau" }],
+        [{ text: "AASTU Exit Exam", callback_data: "start_model_aastu" }]
       ]
     }
   })
@@ -70,121 +66,100 @@ bot.action("model_exam", async (ctx) => {
 })
 
 
-// LOAD EXAMS
-bot.action("exit_2025", async (ctx) =>
-  loadExam(ctx, "exams/exit/2025.json", "Exit Exam Started")
-)
+// START EXAM
+bot.action(/start_(.+)/, async (ctx) => {
 
-bot.action("model_aau", async (ctx) =>
-  loadExam(ctx, "exams/model/aau.json", "AAU Model Exam Started")
-)
+  await ctx.answerCbQuery()
 
-bot.action("model_aastu", async (ctx) =>
-  loadExam(ctx, "exams/model/aastu.json", "AASTU Model Exam Started")
-)
+  const examName = ctx.match[1]
 
+  const msg = await ctx.reply("Exam Started")
 
+  await sendQuestion(ctx, examName, 0, msg.message_id)
 
-// LOAD EXAM FUNCTION
-async function loadExam(ctx, relativePath, message) {
-  console.log(fs.readdirSync(process.cwd()))
+})
 
-  try {
-
-    await ctx.answerCbQuery()
-
-    const filePath = path.join(process.cwd(), relativePath)
-
-    console.log("Loading file:", filePath)
-
-    const questions = JSON.parse(
-      fs.readFileSync(filePath, "utf8")
-    )
-
-    userState[ctx.from.id] = {
-      questions,
-      index: 0,
-      score: 0
-    }
-
-    await ctx.reply(message)
-
-    await sendQuestion(ctx)
-
-  } catch (error) {
-
-    console.error("Exam loading error:", error)
-
-    await ctx.reply("Exam failed to load.")
-
-  }
-
-}
 
 // SEND QUESTION
-async function sendQuestion(ctx) {
+async function sendQuestion(ctx, examName, index, messageId) {
 
-  const state = userState[ctx.from.id]
+  const filePath = path.join(process.cwd(), `exams/${examName}.json`)
 
-  if (!state) return
+  const questions = JSON.parse(
+    fs.readFileSync(filePath, "utf8")
+  )
 
-  const q = state.questions[state.index]
+  const q = questions[index]
 
-  await ctx.reply(
-    `Question ${state.index + 1} / ${state.questions.length}\n\n${q.question}`,
-    {
-      reply_markup: {
-        inline_keyboard: q.options.map((opt, i) => ({
-          text: opt,
-          callback_data: "ans_" + i
-        }))
-      }
-    }
+  const text =
+    `Question ${index + 1} / ${questions.length}\n\n${q.question}`
+
+  const keyboard = {
+    inline_keyboard: q.options.map((opt, i) => [{
+      text: opt,
+      callback_data: `ans_${examName}_${index}_${i}_${messageId}`
+    }])
+  }
+
+  await ctx.telegram.editMessageText(
+    ctx.chat.id,
+    messageId,
+    null,
+    text,
+    { reply_markup: keyboard }
   )
 
 }
 
 
-// HANDLE ANSWERS
+// HANDLE ANSWER
 bot.action(/ans_(.+)/, async (ctx) => {
 
   await ctx.answerCbQuery()
 
-  const state = userState[ctx.from.id]
+  const [examName, indexStr, answerStr, messageIdStr] =
+    ctx.match[1].split("_")
 
-  if (!state) return
+  const index = parseInt(indexStr)
+  const answer = parseInt(answerStr)
+  const messageId = parseInt(messageIdStr)
 
-  const q = state.questions[state.index]
+  const filePath = path.join(process.cwd(), `exams/${examName}.json`)
 
-  const answer = parseInt(ctx.match[1])
+  const questions = JSON.parse(
+    fs.readFileSync(filePath, "utf8")
+  )
+
+  const q = questions[index]
+
+  let resultText
 
   if (answer === q.correct) {
 
-    state.score++
-
-    await ctx.reply("Correct")
+    resultText = "Correct"
 
   } else {
 
-    await ctx.reply(
-      `Wrong\nCorrect answer: ${q.options[q.correct]}`
-    )
+    resultText = `Wrong\nCorrect answer: ${q.options[q.correct]}`
 
   }
 
-  state.index++
+  await ctx.answerCbQuery(resultText)
 
-  if (state.index < state.questions.length) {
+  const nextIndex = index + 1
 
-    await sendQuestion(ctx)
+  if (nextIndex < questions.length) {
+
+    await sendQuestion(ctx, examName, nextIndex, messageId)
 
   } else {
 
-    await ctx.reply(
-      `Exam Finished\n\nScore: ${state.score}/${state.questions.length}`
+    await ctx.telegram.editMessageText(
+      ctx.chat.id,
+      messageId,
+      null,
+      "Exam Finished"
     )
-
-    delete userState[ctx.from.id]
 
   }
 
