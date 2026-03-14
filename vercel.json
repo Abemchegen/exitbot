@@ -1,10 +1,7 @@
 {
   "functions": {
     "api/bot.js": {
-      "includeFiles": [
-        "api/exams/**/*",
-        "api/exams/**"
-      ]
+      "includeFiles": "api/exams/**"
     }
   }
 }
