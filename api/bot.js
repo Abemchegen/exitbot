@@ -7,9 +7,9 @@ let exams = {};
 
 try {
   exams = {
-    exit2025:   require("./exams/exit/2025.json"),
-    modelaau:   require("./exams/model/aau.json"),
-    modelaastu: require("./exams/model/aastu.json")
+    exit2025: require("./exams/exit/2025.json"),
+    modelaau: require("./exams/model/aau.json"),
+    modelaastu: require("./exams/model/aastu.json"),
   };
   console.log("Exams loaded successfully. Keys:", Object.keys(exams));
 } catch (err) {
@@ -21,8 +21,8 @@ bot.start(async (ctx) => {
   await ctx.reply("Welcome to Exit Exam Preparation Bot", {
     reply_markup: {
       keyboard: [["Start Exam Menu"]],
-      resize_keyboard: true
-    }
+      resize_keyboard: true,
+    },
   });
 });
 
@@ -31,10 +31,10 @@ bot.hears(/Start Exam Menu/, async (ctx) => {
   await ctx.reply("Select Exam Type", {
     reply_markup: {
       inline_keyboard: [
-        [{ text: "Exit Exam",       callback_data: "exit_exam" }],
-        [{ text: "Model Exit Exam", callback_data: "model_exam" }]
-      ]
-    }
+        [{ text: "Exit Exam", callback_data: "exit_exam" }],
+        [{ text: "Model Exit Exam", callback_data: "model_exam" }],
+      ],
+    },
   });
 });
 
@@ -44,9 +44,9 @@ bot.action("exit_exam", async (ctx) => {
   await ctx.reply("Select Exit Exam", {
     reply_markup: {
       inline_keyboard: [
-        [{ text: "Last Year Exit Exam", callback_data: "start_exit2025" }]
-      ]
-    }
+        [{ text: "Last Year Exit Exam", callback_data: "start_exit2025" }],
+      ],
+    },
   });
 });
 
@@ -56,10 +56,10 @@ bot.action("model_exam", async (ctx) => {
   await ctx.reply("Select Model Exit Exam", {
     reply_markup: {
       inline_keyboard: [
-        [{ text: "AAU Exit Exam",   callback_data: "start_modelaau" }],
-        [{ text: "AASTU Exit Exam", callback_data: "start_modelaastu" }]
-      ]
-    }
+        [{ text: "AAU Exit Exam", callback_data: "start_modelaau" }],
+        [{ text: "AASTU Exit Exam", callback_data: "start_modelaastu" }],
+      ],
+    },
   });
 });
 
@@ -85,7 +85,7 @@ async function sendQuestion(ctx, examName, index, messageId) {
         ctx.chat.id,
         messageId,
         undefined,
-        "Exam not found or data is invalid."
+        "Exam not found or data is invalid.",
       );
       return;
     }
@@ -95,7 +95,7 @@ async function sendQuestion(ctx, examName, index, messageId) {
         ctx.chat.id,
         messageId,
         undefined,
-        "No more questions available."
+        "Exam complete!",
       );
       return;
     }
@@ -104,14 +104,16 @@ async function sendQuestion(ctx, examName, index, messageId) {
     const text = `Question ${index + 1} / ${questions.length}\n\n${q.question}`;
 
     const keyboard = {
-      inline_keyboard: q.options.map((opt, i) => [{
-        text: opt,
-        callback_data: `ans_${examName}_${index}_${i}_${messageId}`
-      }])
+      inline_keyboard: q.options.map((opt, i) => [
+        {
+          text: opt,
+          callback_data: `ans_${examName}_${index}_${i}_${messageId}`,
+        },
+      ]),
     };
 
     console.log(
-      `[DEBUG] Sending Q${index + 1} | msgId=${messageId} | sample callback: ans_${examName}_${index}_0_${messageId}`
+      `[DEBUG] Sending Q${index + 1} | msgId=${messageId} | sample callback: ans_${examName}_${index}_0_${messageId}`,
     );
 
     await ctx.telegram.editMessageText(
@@ -119,12 +121,13 @@ async function sendQuestion(ctx, examName, index, messageId) {
       messageId,
       undefined,
       text,
-      { reply_markup: keyboard }
+      { reply_markup: keyboard },
     );
-
   } catch (error) {
     console.error("Question send error:", error);
-    await ctx.reply("Failed to load/update question. Please try again or restart.");
+    await ctx.reply(
+      "Failed to load/update question. Please try again or restart.",
+    );
   }
 }
 
@@ -142,13 +145,19 @@ bot.action(/ans_(.+)/, async (ctx) => {
 
     const [examName, indexStr, answerStr, messageIdStr] = parts;
 
-    const index     = parseInt(indexStr, 10);
-    const answer    = parseInt(answerStr, 10);
+    const index = parseInt(indexStr, 10);
+    const answer = parseInt(answerStr, 10);
     const messageId = parseInt(messageIdStr, 10);
 
     if (isNaN(index) || isNaN(answer) || isNaN(messageId) || messageId <= 0) {
-      console.error("[ERROR] Invalid parsed values:", { indexStr, answerStr, messageIdStr });
-      await ctx.answerCbQuery("Something went wrong. Try restarting.", { show_alert: true });
+      console.error("[ERROR] Invalid parsed values:", {
+        indexStr,
+        answerStr,
+        messageIdStr,
+      });
+      await ctx.answerCbQuery("Something went wrong. Try restarting.", {
+        show_alert: true,
+      });
       return;
     }
 
@@ -164,8 +173,8 @@ bot.action(/ans_(.+)/, async (ctx) => {
       return;
     }
 
-    const isCorrect     = answer === q.correct;
-    const userChoice    = q.options[answer] || "(invalid option)";
+    const isCorrect = answer === q.correct;
+    const userChoice = q.options[answer] || "(invalid option)";
     const correctAnswer = q.options[q.correct];
 
     let feedback = isCorrect
@@ -186,16 +195,16 @@ bot.action(/ans_(.+)/, async (ctx) => {
         [
           {
             text: "➡️ Next Question",
-            callback_data: `next_${examName}_${index + 1}_${messageId}`
-          }
+            callback_data: `next_${examName}_${index + 1}_${messageId}`,
+          },
         ],
         [
           {
             text: "🏁 End Exam",
-            callback_data: `end_${examName}_${messageId}`
-          }
-        ]
-      ]
+            callback_data: `end_${examName}_${messageId}`,
+          },
+        ],
+      ],
     };
 
     await ctx.telegram.editMessageText(
@@ -205,10 +214,9 @@ bot.action(/ans_(.+)/, async (ctx) => {
       displayText,
       {
         reply_markup: keyboard,
-        parse_mode: "Markdown"
-      }
+        parse_mode: "Markdown",
+      },
     );
-
   } catch (error) {
     console.error("Answer handling error:", error);
     await ctx.answerCbQuery("Error processing answer.", { show_alert: true });
@@ -230,10 +238,11 @@ bot.action(/next_(.+)/, async (ctx) => {
     if (isNaN(nextIndex) || isNaN(messageId)) return;
 
     await sendQuestion(ctx, examName, nextIndex, messageId);
-
   } catch (err) {
     console.error("Next question error:", err);
-    await ctx.answerCbQuery("Could not load next question.", { show_alert: true });
+    await ctx.answerCbQuery("Could not load next question.", {
+      show_alert: true,
+    });
   }
 });
 
@@ -255,9 +264,8 @@ bot.action(/end_(.+)/, async (ctx) => {
       messageId,
       undefined,
       "🏁 **Exam ended early.**\n\nYou can start a new session anytime with /start or the menu button.",
-      { parse_mode: "Markdown" }
+      { parse_mode: "Markdown" },
     );
-
   } catch (err) {
     console.error("End exam error:", err);
   }
