@@ -7,9 +7,9 @@ let exams = {};
 
 try {
   exams = {
-    exit_2025: require("./exams/exit/2025.json"),
-    model_aau: require("./exams/model/aau.json"),
-    model_aastu: require("./exams/model/aastu.json")
+    exit2025:   require("./exams/exit/2025.json"),
+    modelaau:   require("./exams/model/aau.json"),
+    modelaastu: require("./exams/model/aastu.json")
   };
   console.log("Exams loaded successfully. Keys:", Object.keys(exams));
 } catch (err) {
@@ -44,7 +44,7 @@ bot.action("exit_exam", async (ctx) => {
   await ctx.reply("Select Exit Exam", {
     reply_markup: {
       inline_keyboard: [
-        [{ text: "Last Year Exit Exam", callback_data: "start_exit_2025" }]
+        [{ text: "Last Year Exit Exam", callback_data: "start_exit2025" }]
       ]
     }
   });
@@ -56,8 +56,8 @@ bot.action("model_exam", async (ctx) => {
   await ctx.reply("Select Model Exit Exam", {
     reply_markup: {
       inline_keyboard: [
-        [{ text: "AAU Exit Exam", callback_data: "start_model_aau" }],
-        [{ text: "AASTU Exit Exam", callback_data: "start_model_aastu" }]
+        [{ text: "AAU Exit Exam",   callback_data: "start_modelaau" }],
+        [{ text: "AASTU Exit Exam", callback_data: "start_modelaastu" }]
       ]
     }
   });
@@ -70,7 +70,7 @@ bot.action(/start_(.+)/, async (ctx) => {
 
   const msg = await ctx.reply("Exam Started...");
   
-  // Debug: log the real message ID we're about to use
+  // Debug: log the real message ID
   console.log("[DEBUG] Starting exam → initial message_id =", msg.message_id);
 
   await sendQuestion(ctx, examName, 0, msg.message_id);
@@ -111,7 +111,7 @@ async function sendQuestion(ctx, examName, index, messageId) {
       }])
     };
 
-    // Debug: see what we're actually sending in callback_data
+    // Debug: see what callback_data looks like
     console.log(
       `[DEBUG] Sending Q${index + 1} | msgId=${messageId} | sample callback: ans_${examName}_${index}_0_${messageId}`
     );
@@ -127,9 +127,9 @@ async function sendQuestion(ctx, examName, index, messageId) {
   } catch (error) {
     console.error("Question send error:", error);
 
-    // Fallback: send new message if editing fails
+    // Fallback if edit fails
     await ctx.reply(
-      "Failed to update the question. Please select an option again or restart the exam."
+      "Failed to update the question. Please select an option again or restart."
     );
   }
 }
