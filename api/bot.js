@@ -1,10 +1,8 @@
 const { Telegraf } = require("telegraf");
-const fs = require("fs"); // still needed? only if you add logging later – can be removed otherwise
-const path = require("path"); // can be removed if not used elsewhere
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
-// EXAM DATA – loaded statically at startup (Vercel bundles these automatically)
+// EXAM DATA – loaded statically (Vercel bundles these automatically)
 let exams = {};
 
 try {
@@ -13,9 +11,9 @@ try {
     model_aau: require("./exams/model/aau.json"),
     model_aastu: require("./exams/model/aastu.json")
   };
-  console.log("Exams loaded successfully. Available keys:", Object.keys(exams));
+  console.log("Exams loaded successfully. Keys:", Object.keys(exams));
 } catch (err) {
-  console.error("Failed to load one or more exam files at startup:", err);
+  console.error("Failed to load exam files at startup:", err);
 }
 
 // START
@@ -69,7 +67,12 @@ bot.action("model_exam", async (ctx) => {
 bot.action(/start_(.+)/, async (ctx) => {
   await ctx.answerCbQuery();
   const examName = ctx.match[1];
+
   const msg = await ctx.reply("Exam Started...");
+  
+  // Debug: log the real message ID we're about to use
+  console.log("[DEBUG] Starting exam → initial message_id =", msg.message_id);
+
   await sendQuestion(ctx, examName, 0, msg.message_id);
 });
 
@@ -82,7 +85,7 @@ async function sendQuestion(ctx, examName, index, messageId) {
       await ctx.telegram.editMessageText(
         ctx.chat.id,
         messageId,
-        null,
+        undefined,
         "Exam not found or data is invalid."
       );
       return;
@@ -92,8 +95,8 @@ async function sendQuestion(ctx, examName, index, messageId) {
       await ctx.telegram.editMessageText(
         ctx.chat.id,
         messageId,
-        null,
-        "Invalid question index."
+        undefined,
+        "No more questions."
       );
       return;
     }
@@ -108,21 +111,25 @@ async function sendQuestion(ctx, examName, index, messageId) {
       }])
     };
 
+    // Debug: see what we're actually sending in callback_data
+    console.log(
+      `[DEBUG] Sending Q${index + 1} | msgId=${messageId} | sample callback: ans_${examName}_${index}_0_${messageId}`
+    );
+
     await ctx.telegram.editMessageText(
       ctx.chat.id,
       messageId,
-      null,
+      undefined,
       text,
       { reply_markup: keyboard }
     );
 
   } catch (error) {
     console.error("Question send error:", error);
-    await ctx.telegram.editMessageText(
-      ctx.chat.id,
-      messageId,
-      null,
-      "Failed to load question. Please try again."
+
+    // Fallback: send new message if editing fails
+    await ctx.reply(
+      "Failed to update the question. Please select an option again or restart the exam."
     );
   }
 }
@@ -132,31 +139,40 @@ bot.action(/ans_(.+)/, async (ctx) => {
   await ctx.answerCbQuery();
 
   try {
-    const [examName, indexStr, answerStr, messageIdStr] = ctx.match[1].split("_");
-    const index = parseInt(indexStr);
-    const answer = parseInt(answerStr);
-    const messageId = parseInt(messageIdStr);
+    const parts = ctx.match[1].split("_");
+    if (parts.length !== 4) {
+      console.error("[ERROR] Invalid callback_data parts:", parts);
+      await ctx.answerCbQuery("Invalid question data.", { show_alert: true });
+      return;
+    }
+
+    const [examName, indexStr, answerStr, messageIdStr] = parts;
+
+    const index     = parseInt(indexStr, 10);
+    const answer    = parseInt(answerStr, 10);
+    const messageId = parseInt(messageIdStr, 10);
+
+    if (isNaN(index) || isNaN(answer) || isNaN(messageId) || messageId <= 0) {
+      console.error(
+        "[ERROR] NaN or invalid parsed values →",
+        { indexStr, answerStr, messageIdStr }
+      );
+      await ctx.answerCbQuery(
+        "Something went wrong with this question. Try restarting.",
+        { show_alert: true }
+      );
+      return;
+    }
 
     const questions = exams[examName];
-
     if (!questions || !Array.isArray(questions)) {
-      await ctx.telegram.editMessageText(
-        ctx.chat.id,
-        messageId,
-        null,
-        "Exam data not available."
-      );
+      await ctx.answerCbQuery("Exam data not available.", { show_alert: true });
       return;
     }
 
     const q = questions[index];
     if (!q) {
-      await ctx.telegram.editMessageText(
-        ctx.chat.id,
-        messageId,
-        null,
-        "Question not found."
-      );
+      await ctx.answerCbQuery("Question not found.", { show_alert: true });
       return;
     }
 
@@ -164,7 +180,7 @@ bot.action(/ans_(.+)/, async (ctx) => {
     if (answer === q.correct) {
       resultText = "✅ Correct!";
     } else {
-      resultText = `❌ Wrong\nCorrect answer: ${q.options[q.correct]}`;
+      resultText = `❌ Wrong\nCorrect: ${q.options[q.correct]}`;
     }
 
     await ctx.answerCbQuery(resultText, { show_alert: true });
@@ -173,27 +189,33 @@ bot.action(/ans_(.+)/, async (ctx) => {
     if (nextIndex < questions.length) {
       await sendQuestion(ctx, examName, nextIndex, messageId);
     } else {
-      await ctx.telegram.editMessageText(
-        ctx.chat.id,
-        messageId,
-        null,
-        "🎉 Exam Finished!\nThank you for practicing."
-      );
+      try {
+        await ctx.telegram.editMessageText(
+          ctx.chat.id,
+          messageId,
+          undefined,
+          "🎉 Exam Finished!\nThank you for practicing."
+        );
+      } catch (editErr) {
+        console.error("Final edit failed:", editErr);
+        await ctx.reply("Exam Finished! Thank you for practicing.");
+      }
     }
 
   } catch (error) {
     console.error("Answer handling error:", error);
-    await ctx.answerCbQuery("Error processing your answer", { show_alert: true });
+    await ctx.answerCbQuery(
+      "Error processing answer. Question may have expired.",
+      { show_alert: true }
+    );
   }
 });
 
-// WEBHOOK HANDLER (for Vercel)
+// WEBHOOK HANDLER (Vercel)
 module.exports = async (req, res) => {
   if (req.method === "POST") {
     try {
-      await bot.handleUpdate(req.body, ctx => {
-        // optional: can add extra context if needed
-      });
+      await bot.handleUpdate(req.body);
       res.status(200).send("ok");
     } catch (error) {
       console.error("Webhook error:", error);
