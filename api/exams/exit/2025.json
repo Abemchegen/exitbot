@@ -1,12 +1,398 @@
 [
   {
-    "question": "What is 2 + 2?",
-    "options": ["1", "2", "3", "4"],
+    "number": 52,
+    "question": "Which of the following is true about abstract class?",
+    "options": [
+      "Cannot be inherited",
+      "cannot be instantiated",
+      "Can contain both abstract and non-abstract methods",
+      "is mechanism of encapsulation"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 52,
+    "question": "What is the time complexity of below function\nPublic void function (int n) {\n    for (int i = 0; i < n; i++) {\n    for (int j = i; j < p; j++) {\n    if (j % i == 0) {\n    for (int k = 0; k < i; k++) {\n    printf(\"x\");\n    }\n    }\n    }\n}",
+    "options": ["O(n^2)", "O(n^3)", "O(n log n)", "O(n^2)"],
+    "correct": 1
+  },
+  {
+    "number": 54,
+    "question": "Which of the following describes a set of standards and an associated network protocol that allow establishing a secure channel between a local and a remote computer?",
+    "options": [
+      "Secure Shell (SSH)",
+      "Simple Network Management Protocol (SNMP)",
+      "Secure socket layer (SSL)",
+      "Authentication, Authorization and Accounting (AAA)"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 56,
+    "question": "What is the following specific divergence between Dijkstra's Algorithm (DA) and Uniform Cost Search (UCS) algorithms?",
+    "options": [
+      "DA is optimal, but not UCS",
+      "DA discovers nodes as they come while UCS first collects them in a Queue",
+      "UCS finds the optimal solution while DA",
+      "DA first collects nodes into a Queue but UCS discover them as they come"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 58,
+    "question": "Who is responsible for documenting faults found during the software development process?",
+    "options": ["Tester", "Requirement engineer", "Developer", "Scrum master"],
+    "correct": 0
+  },
+  {
+    "number": 59,
+    "question": "Which method has the same name as that of its class?",
+    "options": ["finalize", "class", "constructor", "delete"],
+    "correct": 2
+  },
+  {
+    "number": 65,
+    "question": "Business people always remodel their business by closely studying their customers' purchasing habits over the course of their purchase history. Accordingly, a salesperson at Markato shop noticed that people who always buy shoes will also buy socks with probability of 0.75 and hence decided to put shoes and socks side by side for ease of accessibility. Which big data analytics technique could this salesperson could employ?",
+    "options": [
+      "Regression modeling",
+      "Clustering algorithm",
+      "Predictive modeling",
+      "Association rule"
+    ],
     "correct": 3
   },
   {
-    "question": "Capital of Ethiopia?",
-    "options": ["Nairobi", "Addis Ababa", "Cairo", "Kampala"],
+    "number": 66,
+    "question": "\"Database is a logically coherent collection of data with some inherent meaning\" describes that",
+    "options": [
+      "number of attributes should be limited",
+      "all attributes of the entity should be related",
+      "the entity should be physical object",
+      "there should be one primary key attribute"
+    ],
     "correct": 1
+  },
+  {
+    "number": 81,
+    "question": "Within OAuth, what component validates the user's identity?",
+    "options": ["Browser", "Authorization Server", "Client", "Resource Server"],
+    "correct": 1
+  },
+  {
+    "number": 85,
+    "question": "Which one of the following is the correct identifier in c++?",
+    "options": ["$variable", "VARIABLE", "Variable", "variable_1234"],
+    "correct": 3
+  },
+  {
+    "number": 94,
+    "question": "Which of the following is not a principal event that cause processes to be created?",
+    "options": [
+      "System initialization",
+      "A user request to create a new process",
+      "Execution of a process-creation system call by a running process",
+      "Multiple execution of processes"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 95,
+    "question": "What is an activity in android?",
+    "options": [
+      "It is an intent",
+      "android class used to configure the android application",
+      "android package file holding all the packages used",
+      "A single screen in an application with supporting java code"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 0,
+    "question": "What is the output of the following Python code snippet?\ndef main():\n    print(\"Hello, World!\")\n\nmain()",
+    "options": [
+      "Hello, World!",
+      "Traceback (most recent call last):\n  File \"main.py\", line 1, in <module>\n    main()\n  File \"main.py\", line 5, in main\n    print(\"Hello, World!\")\nNameError: name 'main' is not defined",
+      "Traceback (most recent call last):\n  File \"main.py\", line 1, in <module>\n    main()\n  File \"main.py\", line 5, in main\n    print(\"Hello, World!\")\nNameError: name 'main' is not defined",
+      "Traceback (most recent call last):\n  File \"main.py\", line 1, in <module>\n    main()\n  File \"main.py\", line 5, in main\n    print(\"Hello, World!\")\nNameError: name 'main' is not defined"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 0,
+    "question": "Assume that you are assigned to design a dormitory management database. A dormitory is located on some building and has attributes specified as DORM (DormID, RoomNumber) and DormID is a primary key. Based on university's rules, six students can be assigned to one dorm. Students can be tracked with attributes STUDENT (IdNo, Name, Department) and IdNo is primary key. Based on this scenario description, which of the following SQL statement is correct to establish relationship between DORM and STUDENT assuming DormID is foreign key?",
+    "options": [
+      "STUDENT table is a referenced relation",
+      "FOREIGN KEY (DormID) REFERENCED BY DORM(DormID)",
+      "DORM table is a referencing relation",
+      "FOREIGN KEY (DormID) REFERENCES DORM(DormID)"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 0,
+    "question": "A memory management policy that decisions must be made as to which page or pages are to be supplanted when a memory is full is known as:",
+    "options": [
+      "Fetch policy",
+      "Cleaning policy",
+      "Load policy",
+      "Replacement policy"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 0,
+    "question": "Which software model would you apply for businesses operating in a changing environment where the initial requirements may inevitably change due to some other or external factors?",
+    "options": [
+      "Spiral model",
+      "Water fall model",
+      "Code and run",
+      "Agile development method"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 0,
+    "question": "Which of the following is true regarding model development in machine learning?",
+    "options": [
+      "Training with large dataset boosts model performance",
+      "Much focus should be given to test data than training data",
+      "Test set and training set should have fifty-fifty overlap",
+      "Proportion of data set for training should be less than the test set"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 0,
+    "question": "Identify the design principle that does not apply to software systems",
+    "options": [
+      "design should be structured to accommodate change",
+      "design should exhibit uniformity and integration",
+      "design should be reinventing the wheel from scratch",
+      "design should be traceable to the analysis model"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 0,
+    "question": "APK stands for:",
+    "options": [
+      "Android Platform Kit",
+      "Android Page Kit",
+      "Android Package Kit",
+      "Android Phone Kit"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 0,
+    "question": "What will be the output of the following code snippet?\n\n<script type=\"text/javascript\" language=\"javascript\">\n\nvar a = \"exitexam\";\nvar result = a.substring(2, 6);\n\ndocument.write(result);\n\n</script>",
+    "options": ["texam", "xitex", "xite", "itex"],
+    "correct": 2
+  },
+  {
+    "number": 0,
+    "question": "Assume that you are assigned to design a dormitory management database. A dormitory is located on some building and has attributes specified as DORM (DormNo, floorNumber) and DormID is a primary key. Based on university's rule, six students can be assigned to one dorm. Students can be tracked with attribute STUDENT (StudentNo, Name, Department) and IDNO is primary key. Based on this scenario description, which of the following SQL statement is correct to establish relationship between DORM and STUDENT assuming DORID is foreign key?",
+    "options": [
+      "STUDENT table is a referenced relation",
+      "FOREIGN KEY (DORID) REFERENCED BY DORM(DormID)",
+      "DORM table is a referencing relation",
+      "FOREIGN KEY (DORID) REFERENCES DORM(DormID)"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 0,
+    "question": "Select the one that is not related with the purpose of properly documenting software architecture.",
+    "options": [
+      "to know how the system is organized and interoperate",
+      "For Stakeholder communication",
+      "For critical system design decisions",
+      "To easily figure out the source code flow"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 0,
+    "question": "Select the one that is not correct related to generalization in system modeling.",
+    "options": [
+      "The higher-level classes are more specific than the lower-level classes by adding specific attributes and operations",
+      "Common information will be maintained in one place",
+      "In generalization, the attributes and operations associated with higher-level classes are also associated with the lower-level classes",
+      "Facilitate easy modification of data"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 0,
+    "question": "Which one of the following is not true regarding algorithm development during problem solving?",
+    "options": [
+      "Should be developed by considering the platforms on which it runs",
+      "Is step wise logical description of how to solve the problem",
+      "Is developed considering the details of the programming language",
+      "Is equivalent to the programming language code"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 0,
+    "question": "Which principle states that 80% of the problems can be fixed with 20% of the entire effort?",
+    "options": [
+      "Partition principle",
+      "Parametric principle",
+      "Pairwise principle",
+      "Pareto principle"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 0,
+    "question": "A firewall is used in a system connected to a wide area network to",
+    "options": [
+      "Fire spreading via network through cables",
+      "Scanning for viruses in various files",
+      "Stop unauthorized access by hackers",
+      "Avoid spreading of fire in the network"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 0,
+    "question": "The permission -wxr-r- represented in octal expression will be:",
+    "options": ["700", "766", "744", "755"],
+    "correct": 2
+  },
+  {
+    "number": 0,
+    "question": "In software risk management, accepting risk happening but don't do anything is known as",
+    "options": [
+      "Risk transfer",
+      "Risk Reduction",
+      "Risk Retention",
+      "Risk avoidance"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 0,
+    "question": "Which statement describes the main goal of software testing as part of the quality assurance process?",
+    "options": [
+      "To guarantee that the software meets the specified requirements.",
+      "To generate software requirement and design documentation.",
+      "To monitor the entire SDLC.",
+      "To achieve project timelines and deadlines."
+    ],
+    "correct": 0
+  },
+  {
+    "number": 0,
+    "question": "Which of the following shows the five stages in Tuckman's model of team development in sequential order?",
+    "options": [
+      "forming, storming, norming, performing, and adjourning",
+      "forming, storming, performing, norming, and adjourning",
+      "storming, forming, norming, performing, and adjourning",
+      "norming, forming, storming, performing, and adjourning"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 0,
+    "question": "What is the time complexity for the following code snippets?\n\nfunction someFunction (n)\n    for (var i=0;i<n*10;i++) {\n    console.log (n);\n    }\n}",
+    "options": ["O(log 2n)", "O(n^2)", "O(log n)", "O(n)"],
+    "correct": 3
+  },
+  {
+    "number": 0,
+    "question": "Which of the following is not an approach used by IT security specialists to enhance the security level of the network?",
+    "options": [
+      "Use of Intrusion detection system",
+      "Use of Intrusion prevention system",
+      "Use of Wana cry protocol",
+      "Use of physical security"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 0,
+    "question": "Which of the following is among benefits provided with access control lists (ACLs) implementation for software security based applications?",
+    "options": [
+      "ACLs provide high network availability.",
+      "Virus detection.",
+      "ACLs classify and organize network traffic.",
+      "ACLs monitor the number of bytes and packets."
+    ],
+    "correct": 2
+  },
+  {
+    "number": 0,
+    "question": "Which statement is correct about the differences between functional and non-functional requirements?",
+    "options": [
+      "Functional requirements are decided by the customer while non-functional requirements are decided by developers",
+      "Unlike functional requirement, nonfunctional requirements are stable",
+      "Functional requirements are the services the system provide while non-functional requirements are constraints on the services or functions offered by the system",
+      "Both are the same most of the time and only vary under certain contexts"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 0,
+    "question": "An informed search algorithm that provides exponential time complexity in the worst-case scenario and guarantees optimality when searching a solution refers to:",
+    "options": [
+      "Uniform Cost Search",
+      "Iterative Deepening A* Search",
+      "A* Search",
+      "Greedy Best-First Search"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 0,
+    "question": "Which of the following is the correct sequence that will be followed during software evolution process?",
+    "options": [
+      "Impact analysis, Change request, change implementation, release planning, system release",
+      "Change request, impact analysis, release planning, change implementation, system release",
+      "Change request, release planning, change implementation, impact analysis, system release",
+      "Change request, impact analysis, change implementation, release planning, system release"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 0,
+    "question": "Given a situation two hosts attempt on a half-duplex Ethernet LAN to send data concurrently, resulting in a collision and subsequent to this collision, what will the hosts do?",
+    "options": [
+      "The router on the segment will signal that the collision has cleared",
+      "An electrical pulse indicates that the collision has cleared",
+      "The jam signal indicates that the collision has been cleared",
+      "The hosts will attempt to resume transmission after a time delay has expired"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 0,
+    "question": "What is the time complexity of bucket insertion\n\nPublic void function (int n) {\n    for (int i = 0; i < n; i++) {\n    for (int j = 0; j < p[i]; j++)\n    if (j % k == 0) {\n    for (int k = 0; k < j; k++)\n    printf(\" \");\n    }\n    }\n}",
+    "options": ["O(n^2)", "O(n^3)", "O(1)", "O(log(n))", "O(n^k)"],
+    "correct": 1
+  },
+  {
+    "number": 0,
+    "question": "Anything that can perceive its environment through sensory and acts upon environment through effectors",
+    "options": ["Intelligence", "Expert System", "API", "Agent"],
+    "correct": 3
+  },
+  {
+    "number": 0,
+    "question": "You are required to write a program that iteratively takes 50 numbers from user input and adds them up only if the numbers are positive and skips if not. Which control structure best fits this scenario?",
+    "options": ["for", "break", "continue", "jump"],
+    "correct": 2
+  },
+  {
+    "number": 0,
+    "question": "The following UML design shows Student class. Assume that the attributes have declared as private and the methods as public. The get methods return the Student age. Which of the following would not raise an error when you run this program?\n\nStudent\nname : String\ndepartment : String\nphone : String\nage : int\nStudent(String, String, String, int)\nSetJDept(String)\ngetName() : String\ngetDept() : String\ngetYearOfBirth() : int\ncalculateAge() : int",
+    "options": [
+      "Student st1 = new Student (\"John\", \"SE\", 0913222222, 20);",
+      "st1 Student = new Student (\"John\", \"CS\", \"02065332455\", 23);",
+      "Student st1 = new Student (\"John\", \"CS\", \"0913222222\", 25);",
+      "Student st1 = new Student (\"John\", \"IT\", \"2000\");"
+    ],
+    "correct": 2
   }
 ]
