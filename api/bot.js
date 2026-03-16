@@ -2,7 +2,7 @@ const { Telegraf } = require("telegraf");
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
-// EXAM DATA – loaded statically (Vercel bundles these automatically)
+// EXAM DATA – loaded once at startup (Vercel bundles these files automatically)
 let exams = {};
 
 try {
@@ -13,10 +13,10 @@ try {
   };
   console.log("Exams loaded successfully. Keys:", Object.keys(exams));
 } catch (err) {
-  console.error("Failed to load exam files at startup:", err);
+  console.error("Failed to load one or more exam files at startup:", err);
 }
 
-// START
+// START COMMAND
 bot.start(async (ctx) => {
   await ctx.reply("Welcome to Exit Exam Preparation Bot", {
     reply_markup: {
@@ -31,7 +31,7 @@ bot.hears(/Start Exam Menu/, async (ctx) => {
   await ctx.reply("Select Exam Type", {
     reply_markup: {
       inline_keyboard: [
-        [{ text: "Exit Exam", callback_data: "exit_exam" }],
+        [{ text: "Exit Exam",       callback_data: "exit_exam" }],
         [{ text: "Model Exit Exam", callback_data: "model_exam" }]
       ]
     }
@@ -69,14 +69,13 @@ bot.action(/start_(.+)/, async (ctx) => {
   const examName = ctx.match[1];
 
   const msg = await ctx.reply("Exam Started...");
-  
-  // Debug: log the real message ID
+
   console.log("[DEBUG] Starting exam → initial message_id =", msg.message_id);
 
   await sendQuestion(ctx, examName, 0, msg.message_id);
 });
 
-// SEND QUESTION
+// SEND QUESTION FUNCTION
 async function sendQuestion(ctx, examName, index, messageId) {
   try {
     const questions = exams[examName];
@@ -96,7 +95,7 @@ async function sendQuestion(ctx, examName, index, messageId) {
         ctx.chat.id,
         messageId,
         undefined,
-        "No more questions."
+        "No more questions available."
       );
       return;
     }
@@ -111,7 +110,6 @@ async function sendQuestion(ctx, examName, index, messageId) {
       }])
     };
 
-    // Debug: see what callback_data looks like
     console.log(
       `[DEBUG] Sending Q${index + 1} | msgId=${messageId} | sample callback: ans_${examName}_${index}_0_${messageId}`
     );
@@ -126,11 +124,7 @@ async function sendQuestion(ctx, examName, index, messageId) {
 
   } catch (error) {
     console.error("Question send error:", error);
-
-    // Fallback if edit fails
-    await ctx.reply(
-      "Failed to update the question. Please select an option again or restart."
-    );
+    await ctx.reply("Failed to load/update question. Please try again or restart.");
   }
 }
 
@@ -153,14 +147,8 @@ bot.action(/ans_(.+)/, async (ctx) => {
     const messageId = parseInt(messageIdStr, 10);
 
     if (isNaN(index) || isNaN(answer) || isNaN(messageId) || messageId <= 0) {
-      console.error(
-        "[ERROR] NaN or invalid parsed values →",
-        { indexStr, answerStr, messageIdStr }
-      );
-      await ctx.answerCbQuery(
-        "Something went wrong with this question. Try restarting.",
-        { show_alert: true }
-      );
+      console.error("[ERROR] Invalid parsed values:", { indexStr, answerStr, messageIdStr });
+      await ctx.answerCbQuery("Something went wrong. Try restarting.", { show_alert: true });
       return;
     }
 
@@ -176,42 +164,106 @@ bot.action(/ans_(.+)/, async (ctx) => {
       return;
     }
 
-    let resultText;
-    if (answer === q.correct) {
-      resultText = "✅ Correct!";
-    } else {
-      resultText = `❌ Wrong\nCorrect: ${q.options[q.correct]}`;
-    }
+    const isCorrect     = answer === q.correct;
+    const userChoice    = q.options[answer] || "(invalid option)";
+    const correctAnswer = q.options[q.correct];
 
-    await ctx.answerCbQuery(resultText, { show_alert: true });
+    let feedback = isCorrect
+      ? "✅ **Correct!**"
+      : `❌ **Wrong!**\nCorrect answer: **${correctAnswer}**`;
 
-    const nextIndex = index + 1;
-    if (nextIndex < questions.length) {
-      await sendQuestion(ctx, examName, nextIndex, messageId);
-    } else {
-      try {
-        await ctx.telegram.editMessageText(
-          ctx.chat.id,
-          messageId,
-          undefined,
-          "🎉 Exam Finished!\nThank you for practicing."
-        );
-      } catch (editErr) {
-        console.error("Final edit failed:", editErr);
-        await ctx.reply("Exam Finished! Thank you for practicing.");
+    feedback += `\n\nYour answer: **${userChoice}**`;
+
+    // Optional: uncomment if you add "explanation" field to questions
+    // if (q.explanation) {
+    //   feedback += `\n\n**Explanation:**\n${q.explanation}`;
+    // }
+
+    const displayText = `Question ${index + 1} / ${questions.length}\n\n${q.question}\n\n${feedback}`;
+
+    const keyboard = {
+      inline_keyboard: [
+        [
+          {
+            text: "➡️ Next Question",
+            callback_data: `next_${examName}_${index + 1}_${messageId}`
+          }
+        ],
+        [
+          {
+            text: "🏁 End Exam",
+            callback_data: `end_${examName}_${messageId}`
+          }
+        ]
+      ]
+    };
+
+    await ctx.telegram.editMessageText(
+      ctx.chat.id,
+      messageId,
+      undefined,
+      displayText,
+      {
+        reply_markup: keyboard,
+        parse_mode: "Markdown"
       }
-    }
+    );
 
   } catch (error) {
     console.error("Answer handling error:", error);
-    await ctx.answerCbQuery(
-      "Error processing answer. Question may have expired.",
-      { show_alert: true }
-    );
+    await ctx.answerCbQuery("Error processing answer.", { show_alert: true });
   }
 });
 
-// WEBHOOK HANDLER (Vercel)
+// NEXT QUESTION
+bot.action(/next_(.+)/, async (ctx) => {
+  await ctx.answerCbQuery();
+
+  try {
+    const parts = ctx.match[1].split("_");
+    if (parts.length !== 3) return;
+
+    const [examName, nextIndexStr, messageIdStr] = parts;
+    const nextIndex = parseInt(nextIndexStr, 10);
+    const messageId = parseInt(messageIdStr, 10);
+
+    if (isNaN(nextIndex) || isNaN(messageId)) return;
+
+    await sendQuestion(ctx, examName, nextIndex, messageId);
+
+  } catch (err) {
+    console.error("Next question error:", err);
+    await ctx.answerCbQuery("Could not load next question.", { show_alert: true });
+  }
+});
+
+// END EXAM EARLY
+bot.action(/end_(.+)/, async (ctx) => {
+  await ctx.answerCbQuery();
+
+  try {
+    const parts = ctx.match[1].split("_");
+    if (parts.length !== 2) return;
+
+    const [examName, messageIdStr] = parts;
+    const messageId = parseInt(messageIdStr, 10);
+
+    if (isNaN(messageId)) return;
+
+    await ctx.telegram.editMessageText(
+      ctx.chat.id,
+      messageId,
+      undefined,
+      "🏁 **Exam ended early.**\n\nYou can start a new session anytime with /start or the menu button.",
+      { parse_mode: "Markdown" }
+    );
+
+  } catch (err) {
+    console.error("End exam error:", err);
+  }
+});
+
+// WEBHOOK HANDLER FOR VERCEL
 module.exports = async (req, res) => {
   if (req.method === "POST") {
     try {
