@@ -113,11 +113,12 @@ async function sendQuestion(ctx, examName, index, messageId) {
 
     const q = questions[index];
 
-    // Use original question number if it exists and is > 0, otherwise use position
-    const questionNumber = (q.number && q.number > 0) ? q.number : (index + 1);
-    const totalQuestions = questions.length;
+    // Question header: use original number if > 0, otherwise just "Question"
+    const questionHeader = (q.number && q.number > 0)
+      ? `Question ${q.number}`
+      : "Question";
 
-    const text = `Question ${questionNumber} / ${totalQuestions}\n\n${q.question}`;
+    const text = `${questionHeader}\n\n${q.question}\n\nA. ${q.options[0]}\nB. ${q.options[1]}\nC. ${q.options[2]}\nD. ${q.options[3]}`;
 
     const keyboard = {
       inline_keyboard: q.options.map((opt, i) => [{
@@ -127,7 +128,7 @@ async function sendQuestion(ctx, examName, index, messageId) {
     };
 
     console.log(
-      `[DEBUG] Sending Q${questionNumber} (index ${index}) | msgId=${messageId}`
+      `[DEBUG] Sending ${questionHeader} (index ${index}) | msgId=${messageId}`
     );
 
     await ctx.telegram.editMessageText(
@@ -195,11 +196,12 @@ bot.action(/ans_(.+)/, async (ctx) => {
     //   feedback += `\n\n**Explanation:**\n${q.explanation}`;
     // }
 
-    // Use original number for display in feedback too
-    const questionNumber = (q.number && q.number > 0) ? q.number : (index + 1);
-    const totalQuestions = questions.length;
+    // Use same header logic for feedback screen
+    const questionHeader = (q.number && q.number > 0)
+      ? `Question ${q.number}`
+      : "Question";
 
-    const displayText = `Question ${questionNumber} / ${totalQuestions}\n\n${q.question}\n\n${feedback}`;
+    const displayText = `${questionHeader}\n\n${q.question}\n\nA. ${q.options[0]}\nB. ${q.options[1]}\nC. ${q.options[2]}\nD. ${q.options[3]}\n\n${feedback}`;
 
     const keyboard = {
       inline_keyboard: [
