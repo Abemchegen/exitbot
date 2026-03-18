@@ -1,0 +1,1259 @@
+[
+  {
+    "number": 1,
+    "question": "Which of the following is not one of the four basic principles of object-oriented design (OOD)?",
+    "options": [
+      "MODULARITY",
+      "ENCAPSULATION",
+      "INHERITANCE",
+      "POLYMORPHISM"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 2,
+    "question": "Which of the following statements about sequence diagrams is true?",
+    "options": [
+      "SEQUENCE DIAGRAMS CANNOT REPRESENT THE ORDER OF METHOD CALLS.",
+      "SEQUENCE DIAGRAMS ARE PRIMARILY USED TO REPRESENT THE STATIC STRUCTURE OF A SYSTEM.",
+      "SEQUENCE DIAGRAMS FOCUS ON THE FLOW OF CONTROL BETWEEN CLASSES.",
+      "SEQUENCE DIAGRAMS SHOW THE INTERACTIONS BETWEEN OBJECTS OVER TIME."
+    ],
+    "correct": 3
+  },
+  {
+    "number": 3,
+    "question": "The model serves as the basis for the creation of ______ for the Software?",
+    "options": [
+      "SPECIFICATIONS",
+      "DESIGN",
+      "TESTING",
+      "MAINTENANCE"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 4,
+    "question": "How you could obtain a statistical profile of the amount of time spent by a program executing different sections of its code?",
+    "options": [
+      "USING SYSTEM CALL INTERFACE FOR MANIPULATING PROCESSES AND THEIR EXECUTION TIME.",
+      "BY ISSUING TRAPS AND MONITORING WHAT SECTIONS OF CODE ARE CURRENTLY EXECUTING.",
+      "BY USING APPLICATION PROGRAM INTERFACE(API)",
+      "BY ISSUING PERIODIC TIMER INTERRUPTS MONITOR WHAT INSTRUCTIONS ARE CURRENTLY EXECUTING WHEN THE INTERRUPTS ARE DELIVERED."
+    ],
+    "correct": 3
+  },
+  {
+    "number": 5,
+    "question": "Automated vehicle is an example of ______?",
+    "options": [
+      "SUPERVISED LEARNING",
+      "ACTIVE LEARNING",
+      "REINFORCEMENT LEARNING",
+      "UNSUPERVISED LEARNING"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 6,
+    "question": "Which of the following is not an application of learning?",
+    "options": [
+      "WWW",
+      "DATA MINING",
+      "SPEECH RECOGNITION",
+      "NONE OF THE MENTIONED"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 7,
+    "question": "What is the algorithm complexity of Binary search algorithm?",
+    "options": [
+      "O(N2)",
+      "O(N!)",
+      "O(LOGN)",
+      "O(N)"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 8,
+    "question": "Which of the following activity is undertaken immediately after feasibility study and before the requirement analysis and specification phase?",
+    "options": [
+      "PROJECT MONITORING",
+      "PROJECT CONTROL",
+      "PROJECT SCHEDULING",
+      "PROJECT PLANNING"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 9,
+    "question": "Which of the following path is supported by HTML?",
+    "options": [
+      "STATIC PATH",
+      "ABSOLUTE ONLY",
+      "RELATIVE ONLY",
+      "ABSOLUTE AND RELATIVE"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 10,
+    "question": "What is the primary goal of statement coverage?",
+    "options": [
+      "TO ENSURE THAT EVERY POSSIBLE BRANCH OF CODE IS EXECUTED AT LEAST ONCE",
+      "TO TEST ALL POSSIBLE COMBINATIONS OF INPUTS TO THE SOFTWARE",
+      "TO ENSURE THAT EVERY DECISION POINT IN THE CODE HAS BEEN TESTED",
+      "TO MEASURE THE PERCENTAGE OF STATEMENTS IN THE SOURCE CODE THAT HAVE BEEN EXECUTED BY THE TEST SUITE"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 11,
+    "question": "Which one of the following is false about ADT (Abstract Data Type)?",
+    "options": [
+      "NONE",
+      "ALL",
+      "IT SPECIFIES HOW TO STORE DATA",
+      "IT SPECIFIES WHAT OPERATIONS CAN BE PERFORMED ON THE DATA",
+      "IT SPECIFIES WHAT DATA IS STORED"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 12,
+    "question": "Assume you have an algorithm which has time function t(n) = 2n + 3n^2 + log n + log n + n!, then complexity order of your algorithm is ?",
+    "options": [
+      "O(NLOGN)",
+      "O(LOGN)",
+      "O(N!)",
+      "O(N2)",
+      "NONE"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 13,
+    "question": "A computer program that contains expertise in a particular domain is called?",
+    "options": [
+      "AUTOMATIC PROCESSOR",
+      "OPERATIONAL SYMBOLIZER",
+      "EXPERT SYSTEM",
+      "INTELLIGENT PLANNER"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 14,
+    "question": "Which of the following loops is guaranteed to execute at least once?",
+    "options": [
+      "NONE OF THE ABOVE",
+      "DO-WHILE LOOP",
+      "WHILE LOOP",
+      "FOR LOOP"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 15,
+    "question": "Which C++ operator allocate memory dynamically?",
+    "options": [
+      "STRUCT",
+      "DELETE",
+      "NEW",
+      "CREATE"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 16,
+    "question": "Which one of the following is true about validation?",
+    "options": [
+      "VALIDATION IS ALWAYS PERFORMED AT THE CLIENT SIDE.",
+      "VALIDATION IN THE CLIENT SIDE IS PREFERABLE IF THE DATA IS TO BE INSERTED IN TO A DATABASE.",
+      "VALIDATION IN THE SERVER SIDE IS PREFERABLE IF THE DATA IS TO NOT TO BE INSERTED IN THE SERVER SIDE.",
+      "NONE OF THE ABOVE",
+      "VALIDATION IS ALWAYS PERFORMED AT THE SERVER SIDE."
+    ],
+    "correct": 3
+  },
+  {
+    "number": 17,
+    "question": "What is the primary purpose of an object diagram in UML?",
+    "options": [
+      "VISUALIZING THE ORGANIZATION OF CLASSES AND THEIR RELATIONSHIPS",
+      "REPRESENTING THE DYNAMIC INTERACTIONS BETWEEN OBJECTS",
+      "MODELING THE FLOW OF CONTROL BETWEEN CLASSES",
+      "DESCRIBING THE STATIC STRUCTURE OF A SYSTEM AT A SPECIFIC POINT IN TIME"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 18,
+    "question": "What is the primary goal of decision coverage?",
+    "options": [
+      "TO TEST ALL POSSIBLE COMBINATIONS OF INPUTS TO THE SOFTWARE",
+      "TO MEASURE THE PERCENTAGE OF DECISION POINTS IN THE SOURCE CODE THAT HAVE BEEN EXERCISED BY THE TEST SUITE",
+      "TO ENSURE THAT EVERY STATEMENT IN THE CODE HAS BEEN EXECUTED",
+      "TO ENSURE THAT EVERY POSSIBLE BRANCH OF CODE IS EXECUTED AT LEAST ONCE"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 19,
+    "question": "Which one of the following provides a solution for one quality attribute?",
+    "options": [
+      "SCENARIO",
+      "PATTERN",
+      "ARTIFACT",
+      "TACTIC"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 20,
+    "question": "Which of the following is the model used for learning?",
+    "options": [
+      "PROPOSITIONAL AND FOR RULES",
+      "DECISION TREES",
+      "NEURAL NETWORKS",
+      "ALL OF THE MENTIONED"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 21,
+    "question": "Which type of testing involves analyzing the mobile application’s source code or binary to identify security vulnerabilities?",
+    "options": [
+      "PENETRATION TESTING",
+      "BLACK-BOX TESTING",
+      "SECURITY SCANNING",
+      "CODE REVIEW"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 22,
+    "question": "The two steps the operating system takes to use a disk to hold its files are ____ and _____?",
+    "options": [
+      "LOGICAL FORMATTING & SWAP SPACE CREATION",
+      "CACHING & LOGICAL FORMATTING",
+      "PARTITIONING & LOGICAL FORMATTING",
+      "SWAP SPACE CREATION & CACHING"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 23,
+    "question": "A process which is copied from main memory to secondary memory on the basis of requirement is known as?",
+    "options": [
+      "THREADS",
+      "SEGMENTATION",
+      "DEMAND PAGING",
+      "PAGING"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 24,
+    "question": "A functional dependency is a relationship between or among?",
+    "options": [
+      "RELATIONS",
+      "ROWS",
+      "ATTRIBUTES",
+      "TABLES"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 25,
+    "question": "The whole communication between client and server to transmit a file may take_____?",
+    "options": [
+      "RTT + TRANSMIT TIME",
+      "2RTT",
+      "RTT",
+      "2RTT + TRANSMIT TIME"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 26,
+    "question": "A network where there is no resource reservation is called_____?",
+    "options": [
+      "CIRCUIT-SWITCHED NETWORKS",
+      "MESSAGE-SWITCHED NETWORKS",
+      "SATELLITE NETWORK",
+      "PACKET-SWITCHED NETWORKS"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 27,
+    "question": "Which one of the following is not a software process quality?",
+    "options": [
+      "PRODUCTIVITY",
+      "VISIBILITY",
+      "PORTABILITY",
+      "TIMELINESS"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 28,
+    "question": "____ is a networking technique that enables us to transfer two or more different data signals simultaneously on the same communication channel?",
+    "options": [
+      "NONE",
+      "SWITCHING",
+      "LAYERING TASK",
+      "MULTIPLEXING"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 29,
+    "question": "Which asymptotic notation is used to represent algorithm complexity in the worst possible set of inputs",
+    "options": [
+      "NONE",
+      "ALL",
+      "BIG-OMEGA NOTATION",
+      "BIG-OH NOTATION",
+      "THETA NOTATION"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 30,
+    "question": "Which can be the disadvantage of Aggregation?",
+    "options": [
+      "TIGHT COUPLING BETWEEN SUPERCLASS AND SUBCLASSES.",
+      "BETTER REPRESENTATION OF REAL WORLD RELATIONSHIPS BETWEEN OBJECTS.",
+      "IMPROVE CODE REUSE.",
+      "LOOSER COUPLING BETWEEN CLASSES, ALLOWS FOR MORE FLEXIBLE CHANGES."
+    ],
+    "correct": 0
+  },
+  {
+    "number": 31,
+    "question": "Architects primarily focus on designing whatever structures will provide them with the most leverage in achieving?",
+    "options": [
+      "ALL",
+      "THE FUNCTIONAL REQUIREMENTS OF THE SYSTEM.",
+      "THE QUALITY ATTRIBUTES REQUIREMENTS OF THE SYSTEM.",
+      "THE OPERATIONAL REQUIREMENTS OF THE SYSTEM."
+    ],
+    "correct": 2
+  },
+  {
+    "number": 32,
+    "question": "One of the following shows relationships between software elements & external environments (creation or execution)?",
+    "options": [
+      "MODULE STRUCTURES",
+      "COMPONENT-AND-CONNECTOR STRUCTURES",
+      "ALLOCATION STRUCTURES",
+      "ALL"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 33,
+    "question": "The weak entity relationship set is represented in E-R diagram as ?",
+    "options": [
+      "DOUBLE DIAMONDS",
+      "DOUBLE RECTANGLE",
+      "DASHED LINES",
+      "DIAMOND"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 34,
+    "question": "Which Algorithm cannot use Divide and Conquer Principle?",
+    "options": [
+      "BUBBLE SORT",
+      "BINARY SEARCH",
+      "ALL",
+      "MERGE SORT"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 35,
+    "question": "Classifying email as spam, labelling webpages based on their content, and voice recognition are examples of ____?",
+    "options": [
+      "DEEP LEARNING",
+      "UNSUPERVISED LEARNING",
+      "MACHINE LEARNING",
+      "SUPERVISED LEARNING"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 36,
+    "question": "Which statement is true?",
+    "options": [
+      "ASSIGNING AN ARRAY NAME WITHOUT INDEX TO POINTER IS VALID",
+      "ASSIGNING POINTER TO AN ARRAY NAME WITHOUT INDEX IS INVALID",
+      "ALL",
+      "NONE",
+      "AN ARRAY NAME IS JUST A POINTER THAT ALWAYS POINTS TO THE ARRAY'S FIRST ELEMENT"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 37,
+    "question": "What is Machine learning?",
+    "options": [
+      "THE AUTONOMOUS ACQUISITION OF KNOWLEDGE THROUGH THE USE OF COMPUTER PROGRAMS",
+      "THE SELECTIVE ACQUISITION OF KNOWLEDGE THROUGH THE USE OF COMPUTER PROGRAMS",
+      "THE AUTONOMOUS ACQUISITION OF KNOWLEDGE THROUGH THE USE OF MANUAL PROGRAMS",
+      "THE SELECTIVE ACQUISITION OF KNOWLEDGE THROUGH THE USE OF MANUAL PROGRAMS"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 38,
+    "question": "Which three set of tuples needed for a simple access control list?",
+    "options": [
+      "USERS, RESOURCES AND PRIVILEGE",
+      "SERVICE, RESOURCES AND POLICES",
+      "SERVICE, RESOURCES AND USERS",
+      "POLICES, RESOURCES AND USERS"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 39,
+    "question": "Which of these views show the functional design of the software, usually in the form of objects and the relationships between them?",
+    "options": [
+      "LOGICAL VIEW",
+      "PHYSICAL VIEW",
+      "DEVELOPMENT VIEW",
+      "PROCESS VIEW"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 40,
+    "question": "The global variable is inaccessible inside a function because of overridden by local variable problem can be solved by?",
+    "options": [
+      "DECLARING ALL VARIABLES AS LOCAL VARIABLES",
+      "USING SCOPE OPERATOR FOR GLOBAL VARIABLES",
+      "USING SCOPE OPERATOR FOR LOCAL VARIABLES",
+      "DECLARING ALL VARIABLES AS GLOBAL VARIABLES"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 41,
+    "question": "An architectural pattern establishes a relationship between?",
+    "options": [
+      "CONTEXT",
+      "SOLUTION",
+      "PROBLEM",
+      "ALL"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 42,
+    "question": "What are the two models of interprocess communication?",
+    "options": [
+      "SHARED MEMORY AND MESSAGE PASSING",
+      "NONE OF THE ABOVE",
+      "DIRECT AND INDIRECT COMMUNICATION",
+      "SEMAPHORE AND SOCKET PROGRAMMING"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 43,
+    "question": "Which one of the following is not the necessary step in a recursive method?",
+    "options": [
+      "AN END CASE THAT TERMINATES THE RECURSION",
+      "TEST TO STOP OR CONTINUE THE RECURSION",
+      "NONE",
+      "A RECURSIVE CALL(S) THAT CONTINUES THE RECURSION"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 44,
+    "question": "What is the prefix length notation for the subnet mask 255.255.255.248?",
+    "options": [
+      "/27",
+      "/29",
+      "/30",
+      "/28"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 45,
+    "question": "The pattern, which allows a client object to access the contents of a container in a sequential manner, without having any knowledge about the internal representation of its contents is?",
+    "options": [
+      "ADAPTER",
+      "ITERATOR",
+      "FACTORY",
+      "FAÇADE"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 46,
+    "question": "The wireless LAN specification is defined by IEEE, called, ______ which covers the data link and physical layer?",
+    "options": [
+      "IEEE 802.3",
+      "IEEE 802.11",
+      "IEEE 802.5",
+      "IEEE 802.2"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 47,
+    "question": "What would be the time complexity to add a node in a queue, if the first node pointing with front pointer and last node pointing with rear Pointer?",
+    "options": [
+      "O(N)",
+      "O(N/2)",
+      "Θ(LOGN)",
+      "O(1)"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 48,
+    "question": "From the following which can be fully describe about Run time polymorphism?",
+    "options": [
+      "IT IS LESS FLEXIBLE AS ALL THINGS EXECUTE AT COMPILE TIME.",
+      "IT CAN HAVE MORE THAN ONE METHODS SHARE THE SAME NAME WITH DIFFERENT PARAMETERS OR SIGNATURE AND DIFFERENT RETURN TYPE.",
+      "IT CAN ACHIEVED BY VIRTUAL FUNCTIONS AND POINTERS.",
+      "IT PROVIDES FAST EXECUTION BECAUSE THE METHOD THAT NEEDS TO BE EXECUTED IS AT THE COMPILE TIME."
+    ],
+    "correct": 2
+  },
+  {
+    "number": 49,
+    "question": "In which directory XML layout files are stored?",
+    "options": [
+      "/SRC",
+      "/RES/VALUES",
+      "/RES/LAYOUT",
+      "/ASSETS"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 50,
+    "question": "A denial-of-service attack violates what security goal?",
+    "options": [
+      "AVAILABILITY",
+      "INTEGRITY",
+      "AUTHORIZATION",
+      "AUTHENTICATION"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 51,
+    "question": "Which of the following is a static testing technique?",
+    "options": [
+      "STRESS TESTING",
+      "INTEGRATION TESTING",
+      "UNIT TESTING",
+      "WALKTHROUGHS"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 52,
+    "question": "What is/are the consequence/s of inheritance?",
+    "options": [
+      "EASY TO ADD OR REMOVE OBJECTS FROM THE SUPPER CLASS.",
+      "CHANGES TO ONE OBJECT DO NOT AFFECT OTHER OBJECTS IN THE AGGREGATE.",
+      "THE RELATIONSHIP BETWEEN OBJECTS IS CLEAR AND WELL-DEFINED.",
+      "CHANGES TO THE SUPERCLASS CAN HAVE FAR-REACHING EFFECTS ON THE SUBCLASSES."
+    ],
+    "correct": 3
+  },
+  {
+    "number": 53,
+    "question": "the resource management can be done by operating system via?",
+    "options": [
+      "SPACE DIVISION MULTIPLEXING",
+      "BOTH TIME AND SPACE DIVISION MULTIPLEXING",
+      "NONE OF THE MENTIONED",
+      "TIME-DIVISION MULTIPLEXING"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 54,
+    "question": "A 66.6% risk is considered as?",
+    "options": [
+      "VERY LOW",
+      "LOW",
+      "MODERATE",
+      "HIGH"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 55,
+    "question": "Suppose, Abebe has a method in his class that needs to makes a request. This request could be handled by one of several handlers. Which design pattern does he need?",
+    "options": [
+      "SINGLETON",
+      "ITERATOR",
+      "FACADE",
+      "CHAIN OF RESPONSIBILITY"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 56,
+    "question": "The entity set person is classified as student and employee. This process is called?",
+    "options": [
+      "GENERALIZATION",
+      "INHERITANCE",
+      "CONSTRAINT GENERALIZATION",
+      "SPECIALIZATION"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 57,
+    "question": "The field that investigates the mechanics of human intelligence is?",
+    "options": [
+      "HISTORY",
+      "SOCIOLOGY",
+      "PSYCHOLOGY",
+      "COGNITIVE SCIENCE"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 58,
+    "question": "Which one notation used to represent algorithm complexity in the worst case?",
+    "options": [
+      "BIG OMEGA NOTATION",
+      "THETA NOTATION",
+      "BIG O NOTATION",
+      "ALL"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 59,
+    "question": "What is the primary goal of quality assurance in software development?",
+    "options": [
+      "TO PREVENT DEFECTS FROM OCCURRING IN THE FIRST PLACE",
+      "TO ENSURE THAT THE SOFTWARE MEETS THE SPECIFIED REQUIREMENTS",
+      "TO FIX BUGS IN THE SOFTWARE",
+      "TO INCREASE THE COMPLEXITY OF THE SOFTWARE"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 60,
+    "question": "In a ______ relationship, one device controls traffic and the others must transmit through it?",
+    "options": [
+      "FULL DUPLEX",
+      "PRIMARY-SECONDARY",
+      "POINT-TO-POINT",
+      "PEER-TO-PEER"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 61,
+    "question": "Which is unique from the following given options?",
+    "options": [
+      "STATIC BINDING",
+      "OVERLOADING",
+      "LATE BINDING",
+      "EARLY BINDING"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 62,
+    "question": "Which describe/s the cost of aggregation?",
+    "options": [
+      "DIFFICULT TO IDENTIFY AND MAINTAIN RELATIONSHIPS BETWEEN OBJECTS.",
+      "SUBCLASSES MAY HAVE TO IMPLEMENT METHODS THEY DO NOT NEED.",
+      "POTENTIAL FOR UNINTENDED CONSEQUENCES OF SUBCLASS BEHAVIOR.",
+      "INFLEXIBILITY TO CHANGE THE SUPERCLASS WITHOUT AFFECTING THE SUBCLASSES."
+    ],
+    "correct": 0
+  },
+  {
+    "number": 63,
+    "question": "Which one of the following is true about PHP ?",
+    "options": [
+      "PHP IS ONE OF THE CLIENT-SIDE SCRIPTING LANGUAGE LIKE JAVASCRIPT.",
+      "PHP IS ONE OF AN OPEN-SOURCE SOFTWARE THAT SUPPORTS ONLY MYSQL DATABASES.",
+      "CAN HAVE A FILE EXTENSION OF \".PHP\", \".PHP3\", OR \".PHMTL\"",
+      "PHP FILES ARE RETURNED TO THE BROWSER AS PLAIN HTML TEXT."
+    ],
+    "correct": 3
+  },
+  {
+    "number": 64,
+    "question": "Which type of testing involves testing the application’s ability to handle a large number of concurrent users?",
+    "options": [
+      "COMPATIBILITY TESTING",
+      "STRESS TESTING",
+      "PERFORMANCE TESTING",
+      "LOAD TESTING"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 65,
+    "question": "Which one of the following is NOT a software architectural activity?",
+    "options": [
+      "UNDERSTANDING THE REQUIREMENTS",
+      "NONE",
+      "COMMUNICATING THE ARCHITECTURE",
+      "CREATING THE BUSINESS CASE FOR THE SYSTEM",
+      "CREATING OR SELECTING THE ARCHITECTURE"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 66,
+    "question": "What is the primary goal of integration testing?",
+    "options": [
+      "TO ENSURE THAT THE SOFTWARE PERFORMS WELL UNDER HIGH LOAD CONDITIONS",
+      "TO TEST THE INTERACTIONS BETWEEN DIFFERENT MODULES OR COMPONENTS OF THE SOFTWARE",
+      "TO VALIDATE THAT THE SOFTWARE IS READY FOR RELEASE TO THE END USERS",
+      "TO VERIFY THAT THE SOFTWARE MEETS THE SPECIFIED REQUIREMENTS"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 67,
+    "question": "Which one is the application of queue?",
+    "options": [
+      "SIMULATION OF ARBITRARY LINKED LIST",
+      "SIMULATION OF RECURSIONS",
+      "SIMULATION OF LIMITED RESOURCE ALLOCATION",
+      "SIMULATING OF RANDOM ACCESSING"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 68,
+    "question": "What is Artificial intelligence?",
+    "options": [
+      "PROGRAMMING WITH YOUR INTELLIGENCE",
+      "MAKING A MACHINE INTELLIGENT",
+      "PUTTING YOUR INTELLIGENCE INTO COMPUTER",
+      "PLAYING A GAME"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 69,
+    "question": "A heuristic is a way of trying?",
+    "options": [
+      "TO DISCOVER SOMETHING OR AN IDEA EMBEDDED IN A PROGRAM",
+      "TO SEARCH AND MEASURE HOW FAR A NODE IN A SEARCH TREE SEEMS TO BE FROM A GOAL",
+      "TO COMPARE TWO NODES IN A SEARCH TREE TO SEE IF ONE IS BETTER THAN ANOTHER",
+      "ALL OF THE MENTIONED"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 70,
+    "question": "Which data structure is suitable to represent hierarchical relationship between elements?",
+    "options": [
+      "PRIORITY",
+      "TREE",
+      "DEQUEUE",
+      "GRAPH"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 71,
+    "question": "The transport layer works ______ for the entire message delivery?",
+    "options": [
+      "DEVICE-TO-DEVICE",
+      "PROCESS-TO-PROCESS",
+      "HOST-TO-HOST",
+      "ALL"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 72,
+    "question": "Assuming worst case analysis, which one of the following algorithm has a time complexity function of O(n^3)?",
+    "options": [
+      "AN ALGORITHM THAT FINDS AN ELEMENT IN A SORTED ARRAY USING BINARY SEARCH METHOD",
+      "AN ALGORITHM THAT ADDS TWO NXN MATRICES",
+      "AN ALGORITHM THAT DETERMINES WHETHER A NUMBER IS EVEN OR ODD",
+      "AN ALGORITHM THAT MULTIPLIES TWO NXN MATRICES",
+      "AN ALGORITHM THAT FINDS AN ELEMENT IN AN UNSORTED ARRAY OF ELEMENTS USING SEQUENTIAL METHOD"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 73,
+    "question": "What is the primary purpose of an activity diagram in UML?",
+    "options": [
+      "DESCRIBING THE STATIC STRUCTURE OF A SYSTEM",
+      "MODELING THE DYNAMIC INTERACTIONS BETWEEN OBJECTS",
+      "REPRESENTING THE FLOW OF ACTIVITIES OR PROCESSES WITHIN A SYSTEM",
+      "VISUALIZING THE ORGANIZATION OF CLASSES AND THEIR RELATIONSHIPS"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 74,
+    "question": "Which is the correct CSS syntax?",
+    "options": [
+      "BODY:COLOR=BLACK",
+      "BODY {COLOR: BLACK}",
+      "{BODY:COLOR=BLACK(BODY)}",
+      "{BODY:COLOR=BLACK}"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 75,
+    "question": "Which paradigm structures a team loosely and depends on individual initiatives of the team members?",
+    "options": [
+      "RANDOM PARADIGM",
+      "OPEN PARADIGM",
+      "CLOSED PARADIGM",
+      "SYNCHRONOUS PARADIGM"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 76,
+    "question": "For example, if a middleware server only requires access to the network, read access to a database table, and the ability to write to a log, this describes all the permissions that should be granted. Under no circumstances should the middleware be granted administrative privileges. Which principle of security design is kept?",
+    "options": [
+      "SECURITY BY OBSCURITY",
+      "PRINCIPLE OF LEAST PRIVILEGE",
+      "SECURE BY DEFAULT",
+      "SECURE THE WEAKEST LINK",
+      "PRINCIPLE OF DEFENSE IN DEPTH"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 77,
+    "question": "Factors that affect the performance of the learner system do not include?",
+    "options": [
+      "GOOD DATA STRUCTURES",
+      "TRAINING SCENARIO",
+      "TYPE OF FEEDBACK",
+      "REPRESENTATION SCHEME USED"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 78,
+    "question": "Adb Stands for ?",
+    "options": [
+      "ANDROID DELETE BRIDGE",
+      "ANDROID DRIVE BRIDGE",
+      "ANDROID DEBUG BRIDGE.",
+      "ANDROID DESTROY BRIDGE."
+    ],
+    "correct": 2
+  },
+  {
+    "number": 79,
+    "question": "If a flawed administrative interface is unlikely to be vulnerable to anonymous attack if it correctly gates access to production management networks, checks for administrative user authorization, and logs all access. Which principle of security design is kept?",
+    "options": [
+      "PRINCIPLE OF DEFENSE IN DEPTH",
+      "FAIL-SAFE STANCE",
+      "SECURITY BY OBSCURITY",
+      "PRINCIPLE OF LEAST PRIVILEGE",
+      "SECURE THE WEAKEST LINK"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 80,
+    "question": "The process each manager follows during the life of a project is known as?",
+    "options": [
+      "PROJECT MANAGEMENT",
+      "MANAGER LIFE CYCLE",
+      "NONE OF THE ABOVE",
+      "PROJECT MANAGEMENT LIFE CYCLE"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 81,
+    "question": "What are the major activities of an operating system in regard to file management?",
+    "options": [
+      "THE MAPPING OF FILES ONTO SECONDARY STORAGE",
+      "THE CREATION AND DELETION OF FILES AND DIRECTORIES.",
+      "THE SUPPORT OF PRIMITIVES FOR MANIPULATING FILES AND DIRECTORIES",
+      "ALL OF THE ABOVE.",
+      "THE BACKUP OF FILES ON STABLE (NONVOLATILE) STORAGE MEDIA"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 82,
+    "question": "An Artificial Intelligence technique that allows computers to understand associations and relationships between objects and events is called?",
+    "options": [
+      "PATTERN MATCHING",
+      "COGNITIVE SCIENCE",
+      "HEURISTIC PROCESSING",
+      "RELATIVE SYMBOLISM"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 83,
+    "question": "Which one of the following is NOT a software architectural activity?",
+    "options": [
+      "CREATING THE BUSINESS CASE FOR THE SYSTEM",
+      "UNDERSTANDING THE REQUIREMENTS",
+      "NONE",
+      "CREATING OR SELECTING THE ARCHITECTURE",
+      "COMMUNICATING THE ARCHITECTURE"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 84,
+    "question": "Which of the following is the component of the learning system?",
+    "options": [
+      "ALL OF THE MENTIONED",
+      "LEARNING RULES",
+      "MODEL",
+      "GOAL"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 85,
+    "question": "Which one is true for accessing and processing of array elements?",
+    "options": [
+      "ALL",
+      "ARRAYNAME[INDEX]",
+      "DATATYPENAME ARRAYNAME [INDEX]",
+      "DATATYPENAME ARRAYNAME [ARRAYSIZE]"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 86,
+    "question": "Which one is not true about command interpreter?",
+    "options": [
+      "IT IS SYSTEM SOFTWARE THAT UNDERSTANDS AND EXECUTES COMMANDS THAT ARE ENTERED BY A HUMAN OR A PROGRAM.",
+      "ALL",
+      "IT IS AN INTERFACE BETWEEN THE PROGRAM AND KERNEL.",
+      "THE PART OF AN OPERATING SYSTEM THAT INTERPRETS COMMANDS AND CARRIES THEM OUT.",
+      "IT READS COMMANDS FROM THE USER OR FROM A FILE OF COMMANDS AND EXECUTES THEM."
+    ],
+    "correct": 2
+  },
+  {
+    "number": 87,
+    "question": "Describes no attribute of a primary key can be null?",
+    "options": [
+      "REFERENTIAL INTEGRITY",
+      "DOMAIN INTEGRITY",
+      "ENTITY INTEGRITY",
+      "ENTERPRISE INTEGRITY"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 88,
+    "question": "Which component handle background processing associated with an application?",
+    "options": [
+      "ACTIVITIES",
+      "BROADCAST RECEIVERS",
+      "CONTENT PROVIDERS",
+      "SERVICES"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 89,
+    "question": "Which one is the correct function calling for the function name sum and two input num1 and num2?",
+    "options": [
+      "SUM(NUM1, NUM2)",
+      "SUM(INT NUM1, INT NUM2)",
+      "INT SUM(NUM1, NUM2)",
+      "INT SUM(INT NUM1, INT NUM2)"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 90,
+    "question": "Which command we use to link a page with another page of HTML page?",
+    "options": [
+      "<A CONNECT=\"PAGE.HTML\"></A>",
+      "<A HERF = \"PAGE.HTML\"></A>",
+      "<A HREF = \"PAGE.HTML\"></A>",
+      "<A SRC = \"PAGE.HTML\"></A>"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 91,
+    "question": "A program that appears to be a game but really deletes a user's hard disk can be an example of which malware?",
+    "options": [
+      "CLICKBOT",
+      "ROOTKIT",
+      "TROJAN HORSE",
+      "SPYWARE"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 92,
+    "question": "How do you add a background color for all <h1> elements?",
+    "options": [
+      "H1 {BACKGROUND-COLOR:#FFFFFF}",
+      "ALL.H1 {BACKGROUND-COLOR:#FFFFFF}",
+      "H1.ALL {BACKGROUND-COLOR:#FFFFFF}"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 93,
+    "question": "Which one is valid identifier?",
+    "options": [
+      "2X",
+      "INT",
+      "X_2",
+      "X-2"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 94,
+    "question": "In the ______ normal form, a composite attribute is converted to individual attributes?",
+    "options": [
+      "SECOND",
+      "FOURTH",
+      "THIRD",
+      "FIRST"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 95,
+    "question": "Which of the following statement is not true?",
+    "options": [
+      "ROW-LEVEL LOCKING MAXIMIZES CONCURRENCY.",
+      "SYSTEM OVERHEAD IS INCREASED IN ROW-LEVEL LOCKING.",
+      "DEGREE OF CONCURRENCY IS LOW FOR FINE GRANULARITY AND HIGH FOR COARSE GRANULARITY",
+      "THE LARGER THE LOCK GRANULARITY USED; THE MORE CONCURRENCY IS REDUCED."
+    ],
+    "correct": 2
+  },
+  {
+    "number": 96,
+    "question": "______ is a computer program that is responsible for accepting HTTP requests from clients and serving them HTTP responses?",
+    "options": [
+      "WEB BROWSERS",
+      "COMMUNICATION NETWORK",
+      "DNS SERVER",
+      "WEB SERVER"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 97,
+    "question": "If someone has an expensive house outfitted with the latest lock system, but the way you open the lock is simply by jiggling the handle. Which principle of security design is kept?",
+    "options": [
+      "PRINCIPLE OF DEFENSE IN DEPTH",
+      "SECURITY BY OBSCURITY",
+      "PRINCIPLE OF LEAST PRIVILEGE",
+      "SECURE BY DEFAULT",
+      "SECURE THE WEAKEST LINK"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 98,
+    "question": "Which of the following component has UI elements that are drawn on-screen including buttons, lists forms etc?",
+    "options": [
+      "RESOURCES",
+      "VIEWS",
+      "FRAGMENTS",
+      "MANIFEST"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 99,
+    "question": "Which of the following HTML tag displays the enclosed text in bold?",
+    "options": [
+      "<PRE> ...... </PRE>",
+      "<EM> ...... </EM>",
+      "<I> ...... </I>",
+      "<STRONG> ...... </STRONG>"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 100,
+    "question": "Among the following statements identify the one which is incorrect?",
+    "options": [
+      "A AND B",
+      "NONE OF THE ABOVE",
+      "<CAPTION> MUST IMMEDIATELY FOLLOW THE <TABLE> TAG, AND PRECEDE ALL OTHER TAGS.",
+      "BROWSERS DISPLAY THE CONTENTS INSIDE <TD>... </TD> IN BOLD, AND CENTERED.",
+      "A TABLE CELL (<TD>) CAN CONTAIN ANY CONTENT, LIKE AN IMAGE, OR EVEN ANOTHER TABLE."
+    ],
+    "correct": 3
+  },
+  {
+    "number": 101,
+    "question": "In the short term and the long term scheduler the primary distinction between is____ ?",
+    "options": [
+      "THE LENGTH OF THEIR QUEUES",
+      "THE TYPE OF PROCESSES THEY SCHEDULE",
+      "NONE OF THE MENTIONED",
+      "THE FREQUENCY OF THEIR EXECUTION"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 102,
+    "question": "Which one of the following is a Component-and-Connector (C&C) Pattern?",
+    "options": [
+      "ALL",
+      "BROKER",
+      "MAP-REDUCED",
+      "LAYERED"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 103,
+    "question": "Which one of the following is different from the other?",
+    "options": [
+      "188.17.12.14",
+      "130.17.12.24",
+      "126.17.12.254",
+      "172.16.35.12"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 104,
+    "question": "Is an attribute which can be further to be divide?",
+    "options": [
+      "NULL",
+      "MULTIPLE VALUE",
+      "DERIVED",
+      "COMPOSITE"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 105,
+    "question": "An algorithm is made up of two independent time complexities f(n) and g(n). Then the complexities of the algorithm is in the order of?",
+    "options": [
+      "MIN (F(N), G(N))",
+      "F(N) × G(N)",
+      "NONE",
+      "MAX (F(N), G(N))",
+      "F(N) + G(N)"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 106,
+    "question": "Which of these is true?",
+    "options": [
+      "GENERIC PRODUCTS ARE PRODUCED BY ORGANIZATION AND SOLD TO OPEN MARKET",
+      "GENERIC PRODUCTS AND CUSTOMIZED PRODUCTS ARE TYPES OF SOFTWARE PRODUCTS",
+      "ALL OF THE ABOVE",
+      "CUSTOMIZED PRODUCTS ARE COMMISSIONED BY PARTICULAR CUSTOMER"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 107,
+    "question": "Which UML diagram is used to represent a system’s structure at a particular moment in time, focusing on the objects and their relationships?",
+    "options": [
+      "CLASS DIAGRAM",
+      "OBJECT DIAGRAM",
+      "ACTIVITY DIAGRAM",
+      "SEQUENCE DIAGRAM"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 108,
+    "question": "Which type of testing coverage measures the percentage of unique paths through the source code that have been executed by the test suite?",
+    "options": [
+      "STATEMENT COVERAGE",
+      "DECISION COVERAGE",
+      "BRANCH COVERAGE",
+      "PATH COVERAGE"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 109,
+    "question": "Which of the following statements about class diagrams is true?",
+    "options": [
+      "CLASS DIAGRAMS ARE TYPICALLY USED DURING THE IMPLEMENTATION PHASE OF SOFTWARE DEVELOPMENT.",
+      "CLASS DIAGRAMS PROVIDE A BLUEPRINT FOR THE STRUCTURE AND BEHAVIOR OF OBJECTS IN A SYSTEM.",
+      "CLASS DIAGRAMS ONLY SHOW THE BEHAVIOR OF OBJECTS.",
+      "CLASS DIAGRAMS CAN REPRESENT THE RELATIONSHIPS BETWEEN OBJECTS BUT NOT THEIR ATTRIBUTES."
+    ],
+    "correct": 1
+  },
+  {
+    "number": 110,
+    "question": "Text that, when clicked, sends you to another piece of text or location is called?",
+    "options": [
+      "WEB SERVER",
+      "URL",
+      "WWW",
+      "HYPERTEXT"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 111,
+    "question": "In a class diagram, what does a solid line with a filled diamond at one end represent?",
+    "options": [
+      "COMPOSITION",
+      "GENERALIZATION",
+      "ASSOCIATION",
+      "AGGREGATION"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 112,
+    "question": "What is the primary purpose of a use case diagram in UML?",
+    "options": [
+      "DESCRIBING THE STATIC STRUCTURE OF A SYSTEM AT A SPECIFIC POINT IN TIME",
+      "CAPTURING THE FUNCTIONAL REQUIREMENTS OF A SYSTEM",
+      "MODELING THE FLOW OF CONTROL BETWEEN CLASSES",
+      "REPRESENTING THE DYNAMIC INTERACTIONS BETWEEN OBJECTS"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 113,
+    "question": "Which of the following component has Configuration file for the application?",
+    "options": [
+      "SERVICES",
+      "RESOURCES",
+      "MANIFEST",
+      "ACTIVITIES"
+    ],
+    "correct": 2
+  }
+]

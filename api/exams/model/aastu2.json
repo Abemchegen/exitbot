@@ -1,0 +1,1102 @@
+[
+  {
+    "number": 1,
+    "question": "A process scheduling approach on which decision as to which available process will be executed by the Processor refers to:",
+    "options": [
+      "Long-term scheduling",
+      "I/O scheduling",
+      "Short-term scheduling",
+      "Medium-term scheduling"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 2,
+    "question": "Which of the following analysis mechanism defines the input for which the algorithm takes the least time (fastest time to complete)?",
+    "options": [
+      "Best case",
+      "Average case",
+      "Standard Case",
+      "Worst case"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 3,
+    "question": "Which of the following UML diagram is not used to represent dynamic behavior of an object during analysis?",
+    "options": [
+      "Instance diagram",
+      "Sequence diagram.",
+      "Collaboration diagram",
+      "Activity diagram"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 4,
+    "question": "Assume there is Class A which is extended by Class B and Class C Class A is declared as abstract, and also contains an abstract method called welcome; this method takes no parameters, and returns a String. Which of the following definitions of Class B will NOT cause a compiler error based on the above scenario?",
+    "options": [
+      "public class Class B extends Class A { public String whatObjectAmI() { return \"I am a class B object\"; } }",
+      "public class Class B extends Class A { public void welcome(String str) { } }",
+      "public class Class B extends Class A { public String whatObjectAmI() { return \"I am a class 8 object\"; } }",
+      "public class Class B extends Class A { public void welcome(String str) { } }"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 5,
+    "question": "Which of the following is not type of Ensemble learning?",
+    "options": [
+      "Lasso",
+      "Boosting",
+      "Bagging",
+      "Random forest"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 6,
+    "question": "A technique for generating plans with conditionals and loops are almost identical to those for generating programs from logical specifications is called___.",
+    "options": [
+      "Automatic programming",
+      "Automatic learning",
+      "Automatic monitoring",
+      "Automatic recursive"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 7,
+    "question": "The CSS property used to specify the transparency of an element is?",
+    "options": [
+      "Transparency",
+      "Opacity",
+      "Background",
+      "Alpha"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 8,
+    "question": "Which of the following describes the functionalities of application layer?",
+    "options": [
+      "It deals encapsulation of frames",
+      "It deals encapsulation of packets",
+      "It deals mechanical, electrical and physical connectivity",
+      "It is process to process interaction"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 9,
+    "question": "Which function is used to serialize an object into a JSON string in Javascript?",
+    "options": [
+      "parseJson()",
+      "toJson()",
+      "stringify0",
+      "parse()"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 10,
+    "question": "A TCP/IP port number used by SSH is?",
+    "options": [
+      "20",
+      "22",
+      "23",
+      "21"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 11,
+    "question": "Given the following fragment of code, how many tests are required for 100% decision coverage? if width > length. then biggest_dimension = width if height > width then biggest_dimension = height end_if else biggest_dimension = length if height > length then biggest_dimension = height end_if end_if",
+    "options": [
+      "2",
+      "6",
+      "4",
+      "3"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 12,
+    "question": "Which of the following is true regarding the referential triggered action ON UPDATE CASCADE",
+    "options": [
+      "sets the referencing primary key to NULL",
+      "change the value of the referencing foreign key attribute to the updated primary key value for all the referencing tuples",
+      "sets the referencing primary key of the base table to default value",
+      "deletes all tuples of the referencing table"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 13,
+    "question": "Which file system can be used to change certain kernel parameters at runtime using sysctl command?",
+    "options": [
+      "Ext4",
+      "Sysfs",
+      "Procfs",
+      "Ext3"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 14,
+    "question": "A software tool, such as a design editor or a program debugger, that developers and other software stakeholders use to support an activity in the software development process is",
+    "options": [
+      "CASE tools",
+      "CMMI",
+      "CMM",
+      "BPMN"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 15,
+    "question": "Which of the following statements designates part of the process of how a switch resolves to forward a frame destined for a recognized unicast MAC address?",
+    "options": [
+      "It matches the unicast destination address to the bridging, or MAC address, table.",
+      "It matches the unicast source address to the bridging, or or MAC address, table.",
+      "It matches the frame's incoming interface to the source MAC entry in the MAC address table.",
+      "It matches the destination IP address to the destination MAC address."
+    ],
+    "correct": 0
+  },
+  {
+    "number": 16,
+    "question": "Which of the following is a unique IPV4 address?",
+    "options": [
+      "172.17.17.17/26",
+      "172.16.30.0/16",
+      "172.16.25.250/16",
+      "172.43.17.1/16"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 17,
+    "question": "Which one of the following is not correct?",
+    "options": [
+      "HTML form element can be of different types",
+      "HTML form elements are used for taking user input",
+      "HTML form elements are used for displaying outputs",
+      "HTML form elements are defined inside <form> tag"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 18,
+    "question": "One of the following statements addresses the characteristics of functional organization structure?",
+    "options": [
+      "Low to moderate project manager authority, low to moderate resource availability, and a full-time project manager's role",
+      "Little or no project manager authority, little or no resource availability, and the functional manager control the project budget",
+      "High to almost total project manager authority, high to almost total resource availability, and full-time project management administrative staff",
+      "Limited project manager authority, limited resource availability, and a part-time project manager's role"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 19,
+    "question": "What will be the output of the following program class increment { public static void main(String args[]) { int a=4; System.out.print(++a * 5); } }",
+    "options": [
+      "5",
+      "20",
+      "24",
+      "25"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 20,
+    "question": "In a quad-tree each non-leaf node has exactly ____ children.",
+    "options": [
+      "2",
+      "1",
+      "4",
+      "3"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 21,
+    "question": "Which of the following mostly used by software project quality evaluators to using the approach of plan, check and act?",
+    "options": [
+      "IEEE",
+      "Capability maturity model",
+      "Six sigma",
+      "ISO model"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 22,
+    "question": "The result of the following program after running will be: class PrintResult { public static void main(String args[]) int arr[] = {3, 4, 5, 6, 7}; for (int i = 0;i < arr.length - 2; ++i) System.out.println(arr[i] + \" \"); } } }",
+    "options": [
+      "3 4 5",
+      "3 4 5 6",
+      "3 4",
+      "3 4 5 6 7"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 23,
+    "question": "An Artificial Intelligence system is composed of:",
+    "options": [
+      "Agent and Environment",
+      "Data and Information",
+      "Device and Network",
+      "Technology and Evolution"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 24,
+    "question": "Which of the following is true regarding integration testing?",
+    "options": [
+      "It uses test data that simulates ideal scenarios.",
+      "It emphases on testing individual software components in isolation.",
+      "It proves the functioning of different software components when integrated together.",
+      "It is only performed after system testing is completed."
+    ],
+    "correct": 2
+  },
+  {
+    "number": 25,
+    "question": "Which of the following describes the leading agile development method?",
+    "options": [
+      "Sprint",
+      "Six sigma",
+      "Extreme programming",
+      "Scrum"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 26,
+    "question": "Which access modifier is suitable if you want your instance variables to be accessible from both the methods of the class and the descendant classes?",
+    "options": [
+      "Private",
+      "Inherited",
+      "Public",
+      "Protected"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 27,
+    "question": "Which of the following is not a data link layer technology?",
+    "options": [
+      "OSPF",
+      "VLAN",
+      "PPP",
+      "Frame-relay"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 28,
+    "question": "The purpose of <iostream> header file in c++ program is:",
+    "options": [
+      "Makes the code secure",
+      "to make the code readable",
+      "to provide input/output functionality",
+      "to create file streams"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 29,
+    "question": "What of the following describes informed search algorithms?",
+    "options": [
+      "They are optimal",
+      "They are admissible",
+      "They are consistent",
+      "They are complete"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 30,
+    "question": "Which one is not an architectural style?",
+    "options": [
+      "MVC",
+      "Client server",
+      "UML",
+      "OSI layer"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 31,
+    "question": "As a software tester, which testing principle can save time and cost of testing?",
+    "options": [
+      "Exhaustive testing is not possible",
+      "Testing early development process saves time and cost",
+      "Prioritize testing based on risk and criticality",
+      "Testing the entire development process affect time and cost"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 32,
+    "question": "Which of the following specifies divergence between Dijkstra's Algorithm (DA) and Uniform Cost Search (UCS) algorithms?",
+    "options": [
+      "DA is optimal, but not UCS",
+      "UCS finds the optimal solution while DA",
+      "DA first collects them into a Queue but UCS discover them as they come",
+      "DA discovers nodes as they come while UCS first collects them in a Queue"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 33,
+    "question": "In software testing, a term which relates the genuine imperfect segments to the absolute number of segments anticipated as faulty known as:",
+    "options": [
+      "F-measure",
+      "Recall",
+      "Accuracy",
+      "Precision"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 34,
+    "question": "Which of the following is not true about binary tree?",
+    "options": [
+      "Empty tree is also a valid binary tree",
+      "We can visualize a binary tree as consisting of a root and two disjoint binary trees",
+      "A tree is called binary tree if each node has zero child, one child or two children",
+      "A tree is called binary tree if and only if each node has zero child"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 35,
+    "question": "What will happen if there is no break statement next to case labels in switch statement?",
+    "options": [
+      "All non-matching case labels will be executed",
+      "The program generates exception",
+      "The default block will be executed",
+      "The program will halt"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 36,
+    "question": "Security estimation is an essential component of ______ process.",
+    "options": [
+      "Software design",
+      "Software development",
+      "SRS design",
+      "Risk management"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 37,
+    "question": "Which of the following is one of the indirect applications of queues?",
+    "options": [
+      "Multiprogramming",
+      "Operating systems schedule jobs (with equal priority) in the order of arrival (e.g., a print queue).",
+      "Auxiliary data structure for algorithms",
+      "Simulation of real-world queues such as lines at a ticket counter or any other first-come first-served scenario requires a queue."
+    ],
+    "correct": 2
+  },
+  {
+    "number": 38,
+    "question": "Which development model helps to cope up with software requirement change to reduce the cost of rework?",
+    "options": [
+      "staged delivery",
+      "prototyping",
+      "Spiral model",
+      "Software Version control"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 39,
+    "question": "A temporary endeavor undertaken to create a unique product, service, or result is known as:",
+    "options": [
+      "Program",
+      "Portfolio",
+      "Project",
+      "Process"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 40,
+    "question": "Select the one different from others",
+    "options": [
+      "System design",
+      "Requirement validation",
+      "Requirement elicitation",
+      "Requirement analysis"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 41,
+    "question": "One of the following is model optimization technique:",
+    "options": [
+      "Gradient descent",
+      "Bagging",
+      "Lasso",
+      "Gradient boosting"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 42,
+    "question": "The keyword used in the SELECT clause to eliminate duplicate tuples from the result of an SQL query is",
+    "options": [
+      "UNIQUE",
+      "DISTINCT",
+      "Group By",
+      "PRIMARY"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 43,
+    "question": "The ultimate purpose of inheritance in OOP is:",
+    "options": [
+      "Data protection",
+      "Code reusability",
+      "Resources saving",
+      "Providing multiple forms for methods"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 44,
+    "question": "The base class from which all classes in Java are inherited?",
+    "options": [
+      "java.lang.class",
+      "java.class.inherited",
+      "java.lang.Object",
+      "java.class.object"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 45,
+    "question": "Which one is not among the layouts available in android?",
+    "options": [
+      "Card Layout",
+      "Linear Layout",
+      "Relative Layout",
+      "Frame Layout"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 46,
+    "question": "Which CSS element is used to make rounded borders around elements?",
+    "options": [
+      "border-circle",
+      "border-rounded",
+      "border-radius",
+      "border-corner"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 47,
+    "question": "A technique that allows large numbers of ideas to be classified into groups for review and analysis",
+    "options": [
+      "Affinity Diagrams",
+      "Activity-on-Node",
+      "Activity List",
+      "Adaptive Life Cycle"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 48,
+    "question": "Which of the following refers to unauthorized disclosure of information?",
+    "options": [
+      "Integrity",
+      "Confidentiality",
+      "Authentication",
+      "Authorization"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 49,
+    "question": "Which of the following is not the contribution of the big data analysis",
+    "options": [
+      "To introduce new culture of data usage",
+      "To gain competitive advantage",
+      "To cope up with volatile market",
+      "To satisfy customer need"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 50,
+    "question": "The correct structure of the for loop statement is:",
+    "options": [
+      "for(initialization, condition, increment/decrement",
+      "for(initialization; condition)",
+      "for(increment/decrement; initialization; condition)",
+      "for(initialization; condition; increment/decrement)"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 51,
+    "question": "Introducing new requirement at the later phase of the project is not recommended due to?",
+    "options": [
+      "Cost of change",
+      "coding complexity",
+      "analysis complexity",
+      "requirement complexity"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 52,
+    "question": "Being a software tester you want to verify the integration of the message between different processes communication using ______ .",
+    "options": [
+      "Network authorization",
+      "Decryption algorithm",
+      "Message Digest",
+      "Digital Signature"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 53,
+    "question": "Fundamental program structure consists of the following core components except",
+    "options": [
+      "back end component",
+      "Variable definition",
+      "main0 method",
+      "Input/output features"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 54,
+    "question": "Assume you have the following hash table, implemented using linear probing. The hash function you are using is the identity function, f(x) = x. In which order could the elements have been added to the hash table? There are several correct answers, and you should give all of them. Assume that the hash table has never been resized, and no elements have been deleted yet.",
+    "options": [
+      "12, 14, 3, 9, 4, 18, 21",
+      "9, 14, 4, 18, 12, 3, 21",
+      "12, 9, 18, 3, 14, 21, 4",
+      "12, 3, 14, 18, 4, 9, 21"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 55,
+    "question": "If your software system can continue in spite of unexpected problems from internal and external environment, we say your system has good:",
+    "options": [
+      "Integrity",
+      "Robustness",
+      "Maintainability",
+      "Reliability"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 56,
+    "question": "What does velocity in big data refer to?",
+    "options": [
+      "Speed of storage consumption",
+      "Speed of data ingestion",
+      "Speed of input data generation",
+      "Speed of data processing and storing"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 57,
+    "question": "Which of the following android component displays the part of an activity on screen?",
+    "options": [
+      "Manifest",
+      "Intent",
+      "View",
+      "Fragment"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 58,
+    "question": "Assume that you are assigned to design a dormitory management database. A dormitory is located on some building and has attributes specified as DORM (DormID, floornumber) and DormID is a primary key. Based on university's rule, six students can be assigned to one dorm. Students can be tracked with attributes STUDENT (IdNo, Name, Department) and IdNo is primary key. Referring to this scenario, if there is a rule that says every DORM must have at least one student, which of the following is true?",
+    "options": [
+      "STUDENT has a total participation",
+      "STUDENT has existence dependency",
+      "DORM has partial participation",
+      "DORM has existence dependency"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 59,
+    "question": "A program that initializes all aspects of the system, from CPU registers to device controllers and the contents of main memory, and then starts the operating system known as:",
+    "options": [
+      "Bootstrap",
+      "Cache memory",
+      "Bootloader",
+      "BIOS"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 60,
+    "question": "Method overriding is a characteristic of which OOP principle?",
+    "options": [
+      "Abstraction",
+      "Inheritance",
+      "Encapsulation",
+      "Polymorphism"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 61,
+    "question": "A tool that is used to check the quality of software to ensure that it meets some minimum coding standards.",
+    "options": [
+      "Code Auditor",
+      "Documenters",
+      "Test Data Generator",
+      "Interactive Debuggers"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 62,
+    "question": "A system software that resides in main memory is",
+    "options": [
+      "Compiler",
+      "Loader",
+      "Executor",
+      "Linker"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 63,
+    "question": "Which object-oriented principle allows the creation of several methods with the same name that differ from each other by the type of input and output?",
+    "options": [
+      "Overriding",
+      "Inheritance",
+      "Encapsulation",
+      "Polymorphism"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 64,
+    "question": "Which one is not the criteria for selecting best programming language for your problem:",
+    "options": [
+      "Modularity",
+      "Platform dependency",
+      "Portability",
+      "Code efficiency"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 65,
+    "question": "Which of the following virtual machines is used by the Android operating system?",
+    "options": [
+      "CLR",
+      "Docker",
+      "Dalvik virtual machine",
+      "JVM"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 66,
+    "question": "Which of the following is the first callback method that is invoked by the system during an activity life-cycle?",
+    "options": [
+      "onRestart0 method",
+      "onCreate0 method",
+      "onClick0 method",
+      "onStartO method"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 67,
+    "question": "APK stands for:",
+    "options": [
+      "Android Phone Kit",
+      "Android Package Kit",
+      "Android Page Kit",
+      "Android Platform Kit"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 68,
+    "question": "Which principle states that 80% of the problems can be fixed with 20% of the entire effort?",
+    "options": [
+      "Pairwise principle",
+      "Partition principle",
+      "Pareto principle",
+      "Parametric principle"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 69,
+    "question": "Select the one that is not correct related to generalization in system modeling.",
+    "options": [
+      "In generalization, the attributes and operations associated with higher-level classes are also associated with the lower-level classes",
+      "The higher-level classes are more specific than the lower-level classes by adding specific attributes and operations",
+      "facilitate easy modification of data",
+      "common information will be maintained in one place"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 70,
+    "question": "Action attribute in HTML forms specifies",
+    "options": [
+      "The auto completion of form",
+      "Which HTTP method is used",
+      "Which action is going on",
+      "Where to submit form"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 71,
+    "question": "Which of the following indicates the assurance that a product, service, or result meets the needs of the customer and other identified stakeholders?",
+    "options": [
+      "Variance",
+      "SWOT Analysis",
+      "Validation",
+      "Verification"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 72,
+    "question": "In a relation design, primary key is a critical constraint that should be considered. It should be defined:",
+    "options": [
+      "Non editable",
+      "NOT NULL",
+      "Within limited value",
+      "NULL"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 73,
+    "question": "Adding additional header information as data moved from the application layer to down refers to:",
+    "options": [
+      "De-capsulation",
+      "Routing",
+      "Switching",
+      "Encapsulation"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 74,
+    "question": "The incredible change in business and society as emerging economies develop and new technologies become available mainly:",
+    "options": [
+      "Makes obsolete the already existing software systems",
+      "Leads to demand for new software architecture",
+      "Requires new testing on the existing software systems",
+      "Leads to Privacy and security breaches"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 75,
+    "question": "A software work product which is associated with the test execution process group is known as:",
+    "options": [
+      "Test Reports",
+      "Requirements",
+      "Test Cases",
+      "Code"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 76,
+    "question": "One of the following statements is inappropriate about Artificial Intelligence?",
+    "options": [
+      "An agent perceives its environment through effectors.",
+      "It is a preprogrammed system,",
+      "AI is a multidisciplinary field of study.",
+      "Ability to learn from the environment"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 77,
+    "question": "Which of the following concept describes bootstrapping?",
+    "options": [
+      "A language interpret other language program",
+      "A language compile itself",
+      "A language compiling other language program",
+      "All of the above"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 78,
+    "question": "Identify the one that does not affect architectural decision",
+    "options": [
+      "Architectural style to be used",
+      "Type of the application to be developed",
+      "The way the data is stored",
+      "Expected performance of the system"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 79,
+    "question": "You fit a model too closely to the particularities of the training set and obtain a model that works well on the training set but works poorly on a new data. This scenario is known as:",
+    "options": [
+      "over fitting",
+      "sweet spot",
+      "under performing",
+      "under fitting"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 80,
+    "question": "For the software architecture to be easily understood by other design experts for later maintenance and scalability, there should be",
+    "options": [
+      "Architectural optimization techniques",
+      "Architectural notation and semantic description",
+      "Architectural refactoring",
+      "Architectural reverse engineering"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 81,
+    "question": "A modification of the free-list approach is to store the addresses of n free blocks in the first free block.",
+    "options": [
+      "Grouping",
+      "Counting",
+      "Linked-list",
+      "Deadlock"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 82,
+    "question": "If performance is the critical requirement of your architecture, which architectural approach you apply while architecting your system?",
+    "options": [
+      "Increase number of component communication",
+      "Increase number of components",
+      "Localize critical operations",
+      "Distribute operations across network"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 83,
+    "question": "What is the time complexity of below function? Public void function (int n) { for (int i = 0; i<n; i++) for(int j=i; j<i*i; j++) if(j % i == 0) { for (int k = 0;k < j; k++) print(\" * \"); } }",
+    "options": [
+      "O(n7)",
+      "O(n2)",
+      "O(n5)",
+      "O(nlogn)"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 84,
+    "question": "Database approach supports different user groups who might have different interest in different parts of the database. This characteristic of data base describes:",
+    "options": [
+      "Parallel transaction",
+      "Multiple users",
+      "Multiple views",
+      "Concurrent transaction"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 85,
+    "question": "To reduce the dispute that might arise between the customer and contractor, each requirement should be documented and later checked during product delivery whether each documented requirements are fully implemented or not. What type of requirement validation is this?",
+    "options": [
+      "Realism check",
+      "Verifiability",
+      "Completeness check",
+      "Validity check"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 86,
+    "question": "Select the correct statement that describes local search algorithms (LSA):",
+    "options": [
+      "The quality of the solution found by LSA depends heavily on the starting point and the choice of the neighborhood function",
+      "LSA are typically used for solving convex optimization problems.",
+      "The time complexity of LSA is independent of the size of the problem.",
+      "LSA always guarantee to find the globally optimal solution."
+    ],
+    "correct": 0
+  },
+  {
+    "number": 87,
+    "question": "One of the following is not purpose of software testing?",
+    "options": [
+      "Improving product acceptance",
+      "Enhancing reliability",
+      "Identifying shortcomings",
+      "Requesting more design and implementation time"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 88,
+    "question": "Which of the following statements is false when a packet is being compared to an-access list?",
+    "options": [
+      "It's always compared with each line of the access list in sequential order.",
+      "Until all lines have been analyzed, the comparison is not over.",
+      "There is an implicit \"deny\" at the end of each access list",
+      "Once the packet matches the condition on a line of the access list, the packet is"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 89,
+    "question": "You have received an e-mail which is unsolicited and commercially known as?",
+    "options": [
+      "Wana Cry",
+      "Spam",
+      "Trash",
+      "Adware"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 90,
+    "question": "For which of the following Android is mainly developed?",
+    "options": [
+      "Servers",
+      "Mobile devices",
+      "Laptops",
+      "Desktops"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 91,
+    "question": "Which activity is not related to data preprocessing?",
+    "options": [
+      "Data transformation",
+      "Data cleaning",
+      "Data optimization",
+      "Data reduction"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 92,
+    "question": "An input stream class in java that is used to read data from file is",
+    "options": [
+      "FileOutputStream",
+      "PipedInputStream",
+      "FileInputStream",
+      "RandomAccessFile"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 93,
+    "question": "A data link sub layer which is responsible for identifying Network layer protocols and then encapsulating them is known as:",
+    "options": [
+      "Point to point Encapsulation",
+      "Media Access Control",
+      "Frame relay",
+      "Logical Link control"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 94,
+    "question": "Assume you have an interface called Payable as follows public interface Payable{ double getPaymentAmmount(); If you have another class Invoice that implements this interface and getQuantity() and getPricePerItem() methods that returns quantity and price per item, which of the following is the correct implementation?",
+    "options": [
+      "public class Invoice extends Payable( public double getPaymentAmmount0l return getOuantity() * getPricePerItemO;",
+      "public class Invoice implements Payable{ public getPaymentAmmount(){ return getQuantity() * getPricePerItem();",
+      "public class Invoice implements Payable{ public double getPaymentAmmount(){ return getQuantity() * getPricePerItem();",
+      "public abstract class Invoice implements Payable{ public double getPaymentAmmountO( return getQuantity() * getPricePerltem0: } }"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 95,
+    "question": "Refer to the following schemas. Attributes underlined are primary keys HOTEL (Hotel_id integer, Hotel_ Name: string, Sub city:; string) ROOM (Room_id: integer, Hotel _id: integer,Price: integen) BOOKING (Hotel id: integer, Room_id: integer,Date_from: date, Date_to: date) GUEST (Guest_id: integer,Name: string,Country: string) Considering the above schema, which of the following SQL statement retrieves Hotel names with their respective Room_id",
+    "options": [
+      "SELECT Hotel_ Name, Room_Id FROM HOTEL, ROOM WHERE ROOM.Hotel_id= HOTEL. Hotel_id",
+      "SELECT Hotel_Name, Room_ld FROM HOTEL, ROOM WHERE ROOM.Room_id= HOTEL. Hotel_id",
+      "SELECT Hotel_Name, Room_ld FROM HOTEL, ROOM WHERE ROOM. Room_id= HOTEL. Hotel_id and ROOM. Hotel_id=HOTEL. Hotel_id",
+      "SELECT Hotel_Name, Room_ld FROM HOTEL, ROOM"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 96,
+    "question": "Which one is different from others?",
+    "options": [
+      "Requirement elicitation",
+      "Requirements validation",
+      "Requirements analysis",
+      "Requirements status tracking"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 97,
+    "question": "Which of the following keywords is used to define a variable in Javascript?",
+    "options": [
+      "const",
+      "int",
+      "val",
+      "let"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 98,
+    "question": "From the following, which one is not among the challenges that are faced by requirement engineers during requirement elicitation?",
+    "options": [
+      "Conflicting requirements",
+      "Obsolete requirement",
+      "requirement change",
+      "Negative stakeholders"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 99,
+    "question": "When running your program, you did not see any error. However, the final output you got is not correct. What type of error is this?",
+    "options": [
+      "Compiling error",
+      "Syntax error",
+      "Logical error",
+      "Run time error"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 100,
+    "question": "Which of the following is against the professional ethics of software engineering?",
+    "options": [
+      "Accepting any works regardless of your competence",
+      "Responsibly remain up-to-date in your profession",
+      "Respect the confidentiality of your employers or clients",
+      "Use your technical skills responsibly"
+    ],
+    "correct": 0
+  }
+]

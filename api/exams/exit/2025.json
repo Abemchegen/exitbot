@@ -10,12 +10,7 @@
     ],
     "correct": 1
   },
-  {
-    "number": 52,
-    "question": "What is the time complexity of below function\nPublic void function (int n) {\n    for (int i = 0; i < n; i++) {\n    for (int j = i; j < p; j++) {\n    if (j % i == 0) {\n    for (int k = 0; k < i; k++) {\n    printf(\"x\");\n    }\n    }\n    }\n}",
-    "options": ["O(n^2)", "O(n^3)", "O(n log n)", "O(n^2)"],
-    "correct": 1
-  },
+
   {
     "number": 54,
     "question": "Which of the following describes a set of standards and an associated network protocol that allow establishing a secure channel between a local and a remote computer?",
@@ -49,6 +44,12 @@
     "question": "Which method has the same name as that of its class?",
     "options": ["finalize", "class", "constructor", "delete"],
     "correct": 2
+  },
+  {
+    "number": 62,
+    "question": "What is the time complexity of below function\nPublic void function (int n) {\n    for (int i = 0; i < n; i++) {\n    for (int j = i; j < p; j++) {\n    if (j % i == 0) {\n    for (int k = 0; k < i; k++) {\n    printf(\"x\");\n    }\n    }\n    }\n}",
+    "options": ["O(n^2)", "O(n^3)", "O(n log n)", "O(n^2)"],
+    "correct": 1
   },
   {
     "number": 65,

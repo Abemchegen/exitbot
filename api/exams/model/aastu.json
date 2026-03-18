@@ -1,12 +1,1100 @@
 [
   {
-    "question": "What is 2 + 2?",
-    "options": ["1", "2", "3", "4"],
+    "number": 1,
+    "question": "The evolution of software is not to be comprised of______",
+    "options": [
+      "Development activities",
+      "Re-engineering activities",
+      "Maintenance activities",
+      "Negotiating with client"
+    ],
     "correct": 3
   },
   {
-    "question": "Capital of Ethiopia?",
-    "options": ["Nairobi", "Addis Ababa", "Cairo", "Kampala"],
+    "number": 2,
+    "question": "What are the activities of Program modularization and Source code translation__________?",
+    "options": [
+      "Forward engineering",
+      "Reverse Engineering",
+      "Reengineering",
+      "Reverse Engineering and Reengineering"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 3,
+    "question": "The Maintenance of software includes_____",
+    "options": [
+      "Error corrections",
+      "Enhancements of capabilities",
+      "Deletion of obsolete capabilities",
+      "All of the mentioned",
+      "None of these"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 4,
+    "question": "Improving in software performance or maintainability is____",
+    "options": [
+      "Corrective Maintenance",
+      "Perfective Maintenance",
+      "Adaptive Maintenance",
+      "Preventive Maintenance"
+    ],
     "correct": 1
+  },
+  {
+    "number": 5,
+    "question": "A code bad smell in which a method requires lots of information from some other class____.",
+    "options": [
+      "Lazy Method",
+      "Long Method",
+      "Feature Envy Method",
+      "Inline Method"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 6,
+    "question": "A search algorithm takes _________ as an input and returns ________ as an output.",
+    "options": [
+      "Input, output",
+      "Problem, solution",
+      "Solution, problem",
+      "Parameters, sequence of actions"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 7,
+    "question": "What are the major component/components for measuring the performance of problemsolving?",
+    "options": [
+      "Completeness",
+      "Optimality",
+      "Time and Space complexity",
+      "All of the mentioned"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 8,
+    "question": "In the TSP problem of n cities, the time taken for traversing all cities, without having prior knowledge of the length of the minimum tour will be_______.",
+    "options": [
+      "O(n)",
+      "O(n2)",
+      "O(n!)",
+      "O(n/2)"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 9,
+    "question": "Which statement is valid for the Heuristic function?",
+    "options": [
+      "The heuristic function is used to solve mathematical problems.",
+      "The heuristic function takes parameters of type string and returns an integer value.",
+      "The heuristic function does not have any return type.",
+      "The heuristic function calculates the cost of an optimal path between the pair of states."
+    ],
+    "correct": 3
+  },
+  {
+    "number": 10,
+    "question": "Machines that try to imitate human intuition while handling vague information lie in the field of AI called?",
+    "options": [
+      "Functional Logic",
+      "Fuzzy Logic",
+      "Boolean Logic",
+      "Human Logic"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 11,
+    "question": "What best Describes Machine Learning?",
+    "options": [
+      "Creating Intelligent machines, that simulate human thinking ability",
+      "Subset of AI, allows machines to learn from data without being explicitly programmed",
+      "Subset of AI, that uses a neural network to analysis the data and get insight like the human brain does",
+      "All"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 12,
+    "question": "Explain the concept of cross-validation in machine learning.",
+    "options": [
+      "It is a technique to train models on the best premises",
+      "It is a form of regularization to reduce overfitting",
+      "It is a method for assessing a model's performance by splitting the dataset into training and testing sets",
+      "It is a way to visualize the decision boundaries of a classification model"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 13,
+    "question": "Which algorithm is commonly used for classification tasks in machine learning?",
+    "options": [
+      "k-means clustering",
+      "Decision trees",
+      "Principal Component Analysis (PCA)",
+      "Linear regression"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 14,
+    "question": "In machine learning, what does 'overfitting' refer to?",
+    "options": [
+      "When a model performs well on the training data but poorly on unseen data",
+      "When a model performs well on unseen data but poorly on the training data",
+      "When a model has too few parameters",
+      "When a model has too many features"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 15,
+    "question": "In the context of neural networks, what is backpropagation?",
+    "options": [
+      "The activation function used in the output layer",
+      "The algorithm for clustering data points",
+      "The process of updating the weights of the network to minimize the error",
+      "The technique for reducing the dimensionality of the input data"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 16,
+    "question": "The major difficulty in designing a layered operating system approach is ______.",
+    "options": [
+      "Appropriately defining the various layers",
+      "Making sure that each layer hides certain data structures, hardware, and operations from higher-level layers",
+      "Debugging a particular layer",
+      "Making sure each layer is easily converted to modules"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 17,
+    "question": "Which of the following best describes the behavior of a CPU-bound program in terms of its use of CPU and I/O resources?",
+    "options": [
+      "CPU-bound programs typically generate long, sustained I/O bursts as they transfer large amounts of data to or from external storage devices or network resources.",
+      "CPU-bound programs typically generate short, periodic CPU bursts as they perform small, focused calculations or data processing tasks that are tightly coupled to I/O operations.",
+      "CPU-bound programs typically generate short, periodic I/O bursts as they retrieve data from external storage devices or network resources.",
+      "CPU-bound programs have long I/O bursts and short CPU bursts, requiring careful management of processing and input/output resources.",
+      "CPU-bound programs typically generate long, sustained CPU bursts as they perform complex calculations and data processing tasks."
+    ],
+    "correct": 4
+  },
+  {
+    "number": 18,
+    "question": "Which of the following scenarios may lead to a page fault?",
+    "options": [
+      "A process requests additional memory from the operating system",
+      "A page that is currently in main memory is modified by the process",
+      "A process tries to access a page that is not currently in main memory",
+      "The operating system performs routine maintenance on the page table"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 19,
+    "question": "What is the purpose of a file allocation table (FAT) in the FAT file system?",
+    "options": [
+      "To store metadata about each file, such as its size and location on disk.",
+      "To maintain a map of free and allocated disk space in the file system.",
+      "To provide a directory structure for organizing files and directories.",
+      "To store a list of bad sectors on the disk."
+    ],
+    "correct": 1
+  },
+  {
+    "number": 20,
+    "question": "The system has the following pages in memory, listed in the order of their arrival: Page A, Page B, Page C, Page D, Page E, Page F, Page G, Page H. The reference bits for the pages are as follows: Page A -1, Page B -1, Page C -1, Page D -1, Page E -1, Page F -1, Page G -1, Page H–1. Based on the Second Chance algorithm, which page will be selected for replacement?",
+    "options": [
+      "Page A",
+      "Page B",
+      "Page H",
+      "Insufficient information to determine replacement page"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 21,
+    "question": "The system has four memory partitions available: Partition A with 250 MB, Partition B with 350 MB, Partition C with 200 MB, and Partition D with 500 MB. Processes with sizes of 180 MB need to be allocated. If the worst-fit memory allocation algorithm is used, which partition would be allocated?",
+    "options": [
+      "Partition A",
+      "Partition B",
+      "Partition C",
+      "Partition D"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 22,
+    "question": "Which one of the following statements is not true?",
+    "options": [
+      "Requirements-design traceability links requirements with specific hardware or software components in the system which is used to implement the requirement.",
+      "Requirements-sources traceability links requirements with the sub-systems where these requirements are implemented.",
+      "Requirements-requirements traceability links requirements with other requirements which are, in some way, dependent on them.",
+      "Requirements-interface traceability links requirements with the interfaces of external systems which are used in the provision of the requirements."
+    ],
+    "correct": 1
+  },
+  {
+    "number": 23,
+    "question": "_____________ is the process of deriving the system requirements through observation of existing systems, discussions with potential users and customers, and task analysis.",
+    "options": [
+      "Requirement elicitation",
+      "Requirement specification",
+      "Requirement gathering",
+      "All"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 24,
+    "question": "Identify the odd one about the requirement.",
+    "options": [
+      "SRS",
+      "Functional Specification",
+      "Requirement Validation",
+      "Requirement Definition"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 25,
+    "question": "Requirement change request is rejected",
+    "options": [
+      "If the change request is valid.",
+      "If the change request results in consequential changes which are unacceptable to the user.",
+      "If the cost of implementing the change is too low.",
+      "None of the above"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 26,
+    "question": "Choose the correct Requirements review process.",
+    "options": [
+      "Plan review - Distribute documents - Prepare for review - Hold review meeting - Follow-up actions - Revise document",
+      "Plan review - Prepare for review - Distribute documents - Hold review meeting - Follow-up actions - Revise document",
+      "Plan review - Distribute documents - Prepare for review - Hold review meeting - Revise document - Follow-up actions",
+      "Plan review - Prepare for review - Distribute documents - Hold review meeting - Revise document - Follow-up actions"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 27,
+    "question": "Which layer is responsible for ensuring end-to-end communication between systems that addresses issues such as flow control and sequencing of data?",
+    "options": [
+      "Presentation Layer",
+      "Session Layer",
+      "Transport Layer",
+      "Network Layer"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 28,
+    "question": "Which error detection method involves adding a checksum to data frames to detect errors during transmission?",
+    "options": [
+      "Cut-Through",
+      "Cyclic redundancy check (CRC)",
+      "Parity bit",
+      "Fragment-Free"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 29,
+    "question": "You are given an IPv4 address of 192.168.1.0 with a subnet mask of 255.255.255.0 (/24), how many usable host addresses are available in this subnet?",
+    "options": [
+      "254",
+      "255",
+      "256",
+      "512"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 30,
+    "question": "You are given the IPv4 address 192.168.1.0/24. Create three subnets with at least 10 hosts each, and specify the network addresses and subnet masks for each subnet.",
+    "options": [
+      "Subnet 1: 192.168.1.0/27, Subnet 2: 192.168.1.32/27, Subnet 3: 192.168.1.64/27",
+      "Subnet 1: 192.168.1.0/29, Subnet 2: 192.168.1.8/29, Subnet 3: 192.168.1.16/29",
+      "Subnet 1: 192.168.1.0/30, Subnet 2: 192.168.1.4/30, Subnet 3: 192.168.1.8/30",
+      "Subnet 1: 192.168.1.0/31, Subnet 2: 192.168.1.4/31, Subnet 3: 192.168.1.8/31"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 31,
+    "question": "Which transport layer protocol is connectionless and does not provide reliable delivery or flow control?",
+    "options": [
+      "TCP (Transmission Control Protocol)",
+      "UDP (User Datagram Protocol)",
+      "HTTP (Hypertext Transfer Protocol)",
+      "SMTP (Simple Mail Transfer Protocol)"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 32,
+    "question": "What is the primary purpose of DHCP (Dynamic Host Configuration Protocol) in a network?",
+    "options": [
+      "Assigning IP addresses dynamically to network devices",
+      "Resolving domain names to IP addresses",
+      "Ensuring secure communication between client and server",
+      "Monitoring and managing network devices"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 33,
+    "question": "In which programming paradigm does the focus lie on describing what needs to be achieved, rather than specifying how to achieve it?",
+    "options": [
+      "Declarative paradigm",
+      "Imperative paradigm",
+      "Object-oriented paradigm",
+      "Functional paradigm"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 34,
+    "question": "Given the following code, what is the result? class A { String val = \"Universe \"; String display() { return \"View\"; } } class B extends A { String val = \"Galaxy \"; String display() { return \"Subset\"; } } public class Bar { public static void main(String[] args) { new Bar().watch(); } void watch() { A a = new B(); System.out.println(a.val + a.display()); } }",
+    "options": [
+      "Universe View",
+      "Universe Subset",
+      "Galaxy Subset",
+      "Galaxy View",
+      "Compilation error"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 35,
+    "question": "What options can be placed at both (1) and (2) to ensure the code compiles without errors? interface Foo { static void display() { System.out.println(\"Programming\"); } } public class Bar implements Foo { public static void main(String[] args) { Bar b = new Bar(); Foo f = b; //Insert here1 } void testVal() { Bar b = new Bar(); Foo f = b; //Insert here2 } }",
+    "options": [
+      "display();",
+      "Bar.display();",
+      "Foo.display();",
+      "f.display();",
+      "b.display();"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 36,
+    "question": "Suppose you have a JavaFX Scene with dimensions 600 pixels wide and 400 pixels high. Which of the following code snippets correctly creates a vertical line starting from the top of the scene to the bottom, positioned at 1/4th of the scene's width from the left?",
+    "options": [
+      "Line (600/4, 0, 600/4, 400)",
+      "Line (600/4, 0, 600/4, 400/2)",
+      "Line (600/4, 0, 600/2, 400)",
+      "Line (600/4, 0, 600/2, 400/2)"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 37,
+    "question": "Suppose you are developing a social networking application where Users can have Followers, Followers can React to Posts, Posts can have Comments, and Users can also Comment on Posts. Which of the following Java class structures best represents this design?",
+    "options": [
+      "class User { private List<Follower> followers; private List<Post> posts; } class Follower { private User user; private List<PostReaction> postReactions; } class Post { private List<Comment> comments; private List<PostReaction> postReactions; } class Comment { private User user; private Post post; } class PostReaction { private Follower follower; private Post post; }",
+      "class User { private List<Follower> followers; private List<Post> posts; } class Follower { private User user; private List<Reaction> reactions; } class Post { private List<Comment> comments; private List<Reaction> reactions; } class Comment { private User user; private Post post; } class Reaction { private Follower follower; private Post post; }",
+      "class User { private List<Follower> followers; private List<Post> posts; } class Follower { private User user; private List<Post> reactions; } class Post { private List<Comment> comments; private List<Follower> reactions; } class Comment { private User user; private Post post; }",
+      "class User { private List<Follower> followers; private List<Post> posts; } class Follower { private User user; private List<Reaction> reactions; } class Post { private List<Comment> comments; private List<Reaction> reactions; } class Comment { private User user; private Post post; } class Reaction { private User user; private Post post; }",
+      "None of the above"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 38,
+    "question": "Using symmetric key encryption to successfully provide authentication relies upon___",
+    "options": [
+      "The sender encrypting with a private key",
+      "The sender encrypting with a public key",
+      "The sender sending an encrypted copy of the shared secret key",
+      "The recipient being able to identify messages encrypted with the wrong key",
+      "The recipient being able to make their shared secret key public"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 39,
+    "question": "What is the relationship between vulnerabilities and countermeasures?",
+    "options": [
+      "Vulnerabilities exploit countermeasures",
+      "Countermeasures address vulnerabilities",
+      "Vulnerabilities and countermeasures are unrelated",
+      "Countermeasures cause vulnerabilities"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 40,
+    "question": "Which encryption algorithm is commonly used for symmetric encryption?",
+    "options": [
+      "RSA",
+      "AES",
+      "Diffie-Hellman",
+      "ECC"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 41,
+    "question": "What is the primary purpose of mitigating vulnerabilities?",
+    "options": [
+      "Preventing unauthorized access",
+      "Detecting malicious code",
+      "Identifying system weaknesses",
+      "Eliminating security threats"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 42,
+    "question": "Which of the following best describes the goals of computer security?",
+    "options": [
+      "Ensuring system availability",
+      "Protecting data confidentiality",
+      "Maintaining data integrity",
+      "All of the above"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 43,
+    "question": "Which architectural pattern is commonly used to divide a software system into smaller, independent, and reusable components?",
+    "options": [
+      "Observer Pattern",
+      "Singleton Pattern",
+      "Adapter Pattern",
+      "Component-Based Architecture"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 44,
+    "question": "In the Model-View-Controller (MVC) architectural pattern, what role is responsible for receiving user input and updating the model accordingly?",
+    "options": [
+      "Model",
+      "View",
+      "Controller",
+      "Service"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 45,
+    "question": "Which software architecture style is best suited for systems that require scalability, fault tolerance, and loose coupling between components?",
+    "options": [
+      "Client-Server Architecture",
+      "Microservices Architecture",
+      "Layered Architecture",
+      "Monolithic Architecture"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 46,
+    "question": "When designing a system for high availability, which architectural decision is most critical to ensure minimal downtime during failures?",
+    "options": [
+      "Implementing redundant components",
+      "Minimizing network latency",
+      "Optimizing database queries",
+      "Increasing server processing power"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 47,
+    "question": "Which design pattern is commonly used to decouple the sender of a request from its receiver, allowing multiple objects to handle the request?",
+    "options": [
+      "Observer Pattern",
+      "Strategy Pattern",
+      "Chain of Responsibility Pattern",
+      "State Pattern"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 48,
+    "question": "Which one of the following statements is correct?",
+    "options": [
+      "White-box testing is applied to test different paths through code depending on user input conditions by looking inside the process prior to the output.",
+      "Automated testing tools like selenium can be used when there is a large project with hundreds of test cases that can be run across multiple machines and rerun when required",
+      "A and B",
+      "None"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 49,
+    "question": "Assume, a group of 5th-year Software Engineering students is developing an Exit Exam Management software for AASTU model exams. The software allows multiple choice exam creation, managing of student enrollment, conducting online exam and automatically calculate student results. Which of the following shouldn’t be considered as a test case for this project?",
+    "options": [
+      "Check that the questions align with the objective of the exit exam",
+      "Verify that the system prevents creation of fill in the blank questions",
+      "Verify that adding of multiple-choice questions with answer key works correctly",
+      "Check that students are enrolling with a valid enrolment code given by the university",
+      "Verify that the system automatically calculates the student result."
+    ],
+    "correct": 0
+  },
+  {
+    "number": 50,
+    "question": "With the Exit Exam Management Software scenario, usability issue that may lead students to errors is identified during user acceptance testing. So, what is your next your recommendation for the issue?",
+    "options": [
+      "Ignoring the issue if it doesn’t affect the core functionality",
+      "Update the user interface that leads to the error to address the usability issue",
+      "Prepare training for students on how to be free from errors",
+      "Re-design the whole software for a better-quality software",
+      "None"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 51,
+    "question": "Software quality assurance is responsible for the following tasks except the one",
+    "options": [
+      "Prepare software quality parameters",
+      "Prepare test plan and requirement analysis report",
+      "Perform quality audit",
+      "Participate to the development of the software to achieve the quality goal"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 52,
+    "question": "What do you feel if you are a member of a big project and work as a tester and quality controller with other software tester and quality assurance team?",
+    "options": [
+      "Prefer to work independently for completing your tasks on time.",
+      "Open to discuss different ideas and perspectives with the team",
+      "Focus on receiving a recognition for your work",
+      "Staying updated on latest testing and quality assurance techniques is essential when directly required for a specific project",
+      "Transfer the task to a less experienced team member if you face a challenging software bug."
+    ],
+    "correct": 1
+  },
+  {
+    "number": 53,
+    "question": "Which of the following is a valid identifier?",
+    "options": [
+      "4mfdg",
+      "_7edb",
+      "Student-age",
+      "Test 12$"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 54,
+    "question": "Assume grade is an array, grade [5] is the ___________ element?",
+    "options": [
+      "The sixth",
+      "The seventh",
+      "The fifth",
+      "Impossible to tell"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 55,
+    "question": "How does using user-defined data types contribute to modular programming?",
+    "options": [
+      "It simplifies code debugging and maintainability.",
+      "It enhances the code reusability",
+      "It increases the program execution speed",
+      "It eliminates the need for writing comments"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 56,
+    "question": "When dynamically allocating memory using new in C++, what does the new operator return?",
+    "options": [
+      "The value stored in the allocated memory.",
+      "A Boolean value indicating success or failure of the memory allocation.",
+      "The memory address of the allocated space.",
+      "An integer representing the size of the allocated memory."
+    ],
+    "correct": 2
+  },
+  {
+    "number": 57,
+    "question": "A user needs a program that stores the following resistance values: 16, 27, 39, 56, and 81. Moreover, he/she needs the program to read current and compute the power as power = resistance * current * current. Determine the appropriate data structure needed to implement this program.",
+    "options": [
+      "Three 1D arrays of float",
+      "One 1D and one 2D array of float",
+      "Single 2D array of float",
+      "Two 1D array and one 1D array of float"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 58,
+    "question": "In C++ to assign the contents of one string to another, you can use:",
+    "options": [
+      "The strcpy () function",
+      "A loop statements",
+      "The assignment operator",
+      "All of the above"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 59,
+    "question": "Which of the following is generally used for performing tasks like creating the structure of the relations, deleting relation?",
+    "options": [
+      "DML (Data Manipulation Language)",
+      "Query",
+      "Relational Schema",
+      "DDL (Data Definition Language)"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 60,
+    "question": "Which of the following provides the ability to query information from the database and insert tuples into, delete tuples from, and modify tuples in the database?",
+    "options": [
+      "DML (Data Manipulation Language)",
+      "DDL (Data Definition Language)",
+      "Query",
+      "Relational Schema"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 61,
+    "question": "Which one of the following commands is used to modify a column inside a table?",
+    "options": [
+      "Drop",
+      "Update",
+      "Alter",
+      "Set"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 62,
+    "question": "Which one of the following is commonly used to define the overall design of the database?",
+    "options": [
+      "Application program",
+      "Data definition language",
+      "Schema",
+      "Source code"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 63,
+    "question": "Which one of the following keyword is used to find out the number of values in a column?",
+    "options": [
+      "TOTAL",
+      "COUNT",
+      "SUM",
+      "ADD"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 64,
+    "question": "A computer security protocol for logging-in can be considered as the example of the ______ component of an information system.",
+    "options": [
+      "Data",
+      "Software",
+      "Procedure",
+      "Hardware"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 65,
+    "question": "Which is the most appropriate data structure for reversing a word?",
+    "options": [
+      "Stack",
+      "Queue",
+      "Graph",
+      "Tree"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 66,
+    "question": "What is the advantage of a hash table as a data structure?",
+    "options": [
+      "Easy to implement",
+      "Faster access of data",
+      "Exhibit good locality of reference",
+      "Very efficient for less number of entries"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 67,
+    "question": "A data structure in which elements can be inserted or deleted at/from both ends but not in the middle is?",
+    "options": [
+      "Priority queue",
+      "Dequeue",
+      "Circular queue",
+      "Queue"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 68,
+    "question": "Which one of the following is an application of Stack Data Structure?",
+    "options": [
+      "Managing function calls",
+      "The stock span problem",
+      "Arithmetic expression evaluation",
+      "All of the above"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 69,
+    "question": "Consider the following pseudocode that uses a stack. What is output for input \"AASTU\"?",
+    "options": [
+      "AASTU",
+      "AASTUAASTU",
+      "UTSAA",
+      "UTSAAAASTU"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 70,
+    "question": "Which one of the following is an application of Queue Data Structure?",
+    "options": [
+      "When a resource is shared among multiple consumers.",
+      "When data is transferred asynchronously (data not necessarily received at same rate as sent) between two processes",
+      "Load Balancing",
+      "All of the above"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 71,
+    "question": "Fill in the missing code to complete the markup of the HTML hyperlink for the following code snippet. ________href=\"https://www.w3schools.com\"> This is a link________",
+    "options": [
+      "<link> and </ link>",
+      "<script> and </script>",
+      "<a> and </a>",
+      "<b> and </b>"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 72,
+    "question": "Select the true statement from the following about HTML form elements .",
+    "options": [
+      "Any particular HTML5 form input types must render identically in every HTML5- compliant browser.",
+      "When the focus is placed in the text field (i.e., the cursor is in the text field), the place holder text is submitted to the server.",
+      "You do not need to include autofocus in your form",
+      "The nav element displays a drop-down menu of hyperlink"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 73,
+    "question": "Using the______________ element allows you to use external style sheets in your pages.",
+    "options": [
+      "Link",
+      "Script",
+      "Anchor",
+      "Style"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 74,
+    "question": "The_____________pseudo-class is activated when the user moves the mouse cursor over the specified element",
+    "options": [
+      ":focus",
+      ":hover",
+      ":active",
+      ":visited"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 75,
+    "question": "Choose the right output of the following CSS code snippet div { border-width: 5px; border-style: solid dashed double dotted; }",
+    "options": [
+      "Box having solid top outline, dashed right outline, double bottom outline and dotted left outline",
+      "Box having solid left outline, dashed top outline, double right outline and dotted bottom outline",
+      "Box having solid bottom outline, dashed right outline, double top outline and dotted left outline",
+      "Box having solid left outline, dashed right outline, double top outline and dotted bottom outline"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 76,
+    "question": "What will be the output of the following code snippet?",
+    "options": [
+      "12",
+      "60",
+      "65",
+      "70"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 77,
+    "question": "What will be the output of the following code snippet?",
+    "options": [
+      "John",
+      "Hello, my name is John Doe.",
+      "Doe",
+      "John Doe"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 78,
+    "question": "Identify the wrong statement.",
+    "options": [
+      "Echo \"Hello \".$name;",
+      "echo ‘Hello $name’;",
+      "Echo \"Hello $name\";",
+      "echo \"Hello \"; echo $name;"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 79,
+    "question": "_______________is a form tag attribute which dictates to which page the form data will be sent.",
+    "options": [
+      "Method",
+      "Post",
+      "Action",
+      "get"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 80,
+    "question": "What is the output of the following code segment? int x = 24, y = 4; do { x - = y; if (x == 2 * y) continue; cout << x <<\", \"; } while (x!= y);",
+    "options": [
+      "20,16,12,",
+      "24,20,16,12,",
+      "20,16,12,8,",
+      "20,16,12,8,4,"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 81,
+    "question": "What is the output of the below code segment? int a = 10, b = 20; int* ptr1 = &a; int* ptr2 = &b; *ptr1 = *ptr1 + *ptr2++; cout << a<<\", \"<<b;",
+    "options": [
+      "10, 20",
+      "10, 21",
+      "30, 21",
+      "30, 20"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 82,
+    "question": "An if statement that correctly executes 3 instructions, if the given condition is true?",
+    "options": [
+      "if (x < 0) a = b * 2; y = x; z = a – y;",
+      "if (x < 0) {a = b * 2; y = x; z = a – y;}",
+      "if (x < 0) a = b * 2; y = x; z = a – y;}",
+      "if {(x < 0) a = b * 2; y = x; z = a – y;}"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 83,
+    "question": "Which of the following is not correct in using function with Array?",
+    "options": [
+      "An entire array can be used in a function calling and as a function parameter",
+      "Individual array elements can be used both in a function calling and as a return",
+      "An entire array can be used as a function return",
+      "Array size is optional while calling function with an array parameter"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 84,
+    "question": "Identify a function declaration using default arguments correctly?",
+    "options": [
+      "int smallest (int x, int y =3, int z=2)",
+      "int smallest (int x=3, int y =2, int z)",
+      "int smallest (int x=3, int y, int z=2)",
+      "int smallest (int x, int y, int z)"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 85,
+    "question": "What contributes to the security of wired networks?",
+    "options": [
+      "Low delay",
+      "Need for proximity",
+      "High power machines",
+      "Need physical access"
+    ],
+    "correct": 3
+  },
+  {
+    "number": 86,
+    "question": "In which scenario are low-power machines more suitable?",
+    "options": [
+      "Data centers",
+      "Office environments",
+      "Mobile networks",
+      "Wired networks"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 87,
+    "question": "Which mobile communication network is the European standard for future digital Mobile Radio Networks?",
+    "options": [
+      "AMPS",
+      "UMTS",
+      "DECT",
+      "TETRA"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 88,
+    "question": "In GSM architecture, what is the primary function of the Base Station Controller (BSC)?",
+    "options": [
+      "Managing mobile subscriber billing",
+      "Handling handovers between Base Transceiver Stations (BTS)",
+      "Providing internet connectivity to mobile devices",
+      "Securing communication channels"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 89,
+    "question": "In GSM architecture, what is the purpose of the Home Location Register (HLR)?",
+    "options": [
+      "Managing handovers between cells",
+      "Storing subscriber information and mobility profiles",
+      "Encrypting voice data during transmission",
+      "Routing voice calls to the correct Base Station"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 90,
+    "question": "What is version control in software engineering?",
+    "options": [
+      "The process of documenting software requirements",
+      "The process of managing changes to source code and other software artifacts",
+      "The process of developing the software architecture",
+      "The process of designing the user interface of the software"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 91,
+    "question": "Which of the following is an example of a software maintenance activity?",
+    "options": [
+      "Writing code documentation",
+      "Designing the software architecture",
+      "Gathering user requirements",
+      "Testing the software"
+    ],
+    "correct": 0
+  },
+  {
+    "number": 92,
+    "question": "What is the purpose of requirements engineering in software development?",
+    "options": [
+      "To design the user interface of the software",
+      "To document the software development process",
+      "To gather, analyze, and document the requirements of the software",
+      "To test the software for bugs and errors"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 93,
+    "question": "Which software development lifecycle model emphasizes iterative and incremental development?",
+    "options": [
+      "Waterfall model",
+      "Spiral model",
+      "Agile model",
+      "V-model"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 94,
+    "question": "Which software development lifecycle model is characterized by a series of overlapping phases?",
+    "options": [
+      "Waterfall model",
+      "Spiral model",
+      "V-model",
+      "Rapid Application Development (RAD) model"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 95,
+    "question": "Which of the following choices contains the key principles of the Agile software development methodology?",
+    "options": [
+      "Modularity, concurrency, sequential execution, spaghetti code",
+      "Iterative development, customer collaboration, responding to change, individuals and interactions over processes and tools",
+      "Risk analysis, prototyping, rapid feedback, user involvement",
+      "Requirements gathering, design, implementation, testing, maintenance"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 96,
+    "question": "Which of the following statement(s) is/are NOT True? I. Projects have defined objectives II. Projects have a large scope than projects III. The projects and the programs in a portfolio must be directly related",
+    "options": [
+      "I only",
+      "II only",
+      "III only",
+      "II and III only"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 97,
+    "question": "Given the following cash flow information for groups of projects, answer the questions that follow. Assume cash flows take place at the end of each year. The year 0 figure represents the initial investment made at the start of the project. (Answer questions 98 to 100 based on this data). Year Project1 Project2 Project3 0 -10,000 -100,000 -12,000 1 1,000 20,000 3,000 2 1,000 20,000 3,000 3 1,000 20,000 3,000 4 1,000 20,000 3,000 5 10,000 30,000 7,500 Which project is the most viable, if you use Net Profit as a cost-benefit analysis technique?",
+    "options": [
+      "Project 1, with a net profit of 4000.00",
+      "Project 2 with a net profit of 10,000.00",
+      "Project 3, with a net profit of 7500.00",
+      "None"
+    ],
+    "correct": 1
+  },
+  {
+    "number": 98,
+    "question": "Given the following cash flow information for groups of projects, answer the questions that follow. Assume cash flows take place at the end of each year. The year 0 figure represents the initial investment made at the start of the project. (Answer questions 98 to 100 based on this data). Year Project1 Project2 Project3 0 -10,000 -100,000 -12,000 1 1,000 20,000 3,000 2 1,000 20,000 3,000 3 1,000 20,000 3,000 4 1,000 20,000 3,000 5 10,000 30,000 7,500 Which project is preferable if you use the Payback Period cost-benefit analysis technique?",
+    "options": [
+      "Project 1",
+      "Project 2",
+      "Project 3",
+      "A & B"
+    ],
+    "correct": 2
+  },
+  {
+    "number": 99,
+    "question": "Given the following cash flow information for groups of projects, answer the questions that follow. Assume cash flows take place at the end of each year. The year 0 figure represents the initial investment made at the start of the project. (Answer questions 98 to 100 based on this data). Year Project1 Project2 Project3 0 -10,000 -100,000 -12,000 1 1,000 20,000 3,000 2 1,000 20,000 3,000 3 1,000 20,000 3,000 4 1,000 20,000 3,000 5 10,000 30,000 7,500 Which project do you recommend as a first priority for implementation if you use the Return-on-Investment (ROI) cost-benefit analysis technique?",
+    "options": [
+      "Project 1",
+      "Project 2",
+      "Project 3.",
+      "None."
+    ],
+    "correct": 2
   }
 ]
