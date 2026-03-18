@@ -16,9 +16,9 @@ try {
 
   exams = rawExams;
 
-  console.log("Exams loaded and sorted. Keys:", Object.keys(exams));
+  console.log("Exams loaded. Keys:", Object.keys(exams));
 } catch (err) {
-  console.error("Failed to load or sort exam files:", err);
+  console.error("Failed to load exam files:", err);
 }
 
 // START COMMAND
@@ -61,8 +61,18 @@ bot.action("model_exam", async (ctx) => {
   await ctx.reply("Select Model Exit Exam", {
     reply_markup: {
       inline_keyboard: [
-        [{ text: "AASTU Model Exit Exam 1", callback_data: "start_modelaastu2" }],
-        [{ text: "AASTU Model Exit Exam 2", callback_data: "start_modelaastu" }],
+        [
+          {
+            text: "AASTU Model Exit Exam 1",
+            callback_data: "start_modelaastu2",
+          },
+        ],
+        [
+          {
+            text: "AASTU Model Exit Exam 2",
+            callback_data: "start_modelaastu",
+          },
+        ],
         [{ text: "Model Exit Exam 1", callback_data: "start_model2" }],
         [{ text: "Model Exit Exam 2", callback_data: "start_model" }],
       ],
@@ -70,7 +80,7 @@ bot.action("model_exam", async (ctx) => {
   });
 });
 
-// START EXAM
+// START EXAM – initialize score 0/0
 bot.action(/start_(.+)/, async (ctx) => {
   await ctx.answerCbQuery();
   const examName = ctx.match[1];
@@ -79,11 +89,19 @@ bot.action(/start_(.+)/, async (ctx) => {
 
   console.log("[DEBUG] Starting exam → initial message_id =", msg.message_id);
 
-  await sendQuestion(ctx, examName, 0, msg.message_id);
+  // Start with score 0/0
+  await sendQuestion(ctx, examName, 0, msg.message_id, 0, 0);
 });
 
-// SEND QUESTION FUNCTION
-async function sendQuestion(ctx, examName, index, messageId) {
+// SEND QUESTION FUNCTION – now accepts current score
+async function sendQuestion(
+  ctx,
+  examName,
+  index,
+  messageId,
+  correctCount = 0,
+  attemptedCount = 0,
+) {
   try {
     const questions = exams[examName];
 
@@ -98,18 +116,20 @@ async function sendQuestion(ctx, examName, index, messageId) {
     }
 
     if (index >= questions.length || index < 0) {
+      // Final screen with final score
+      const finalScore = `${correctCount} / ${attemptedCount}`;
       await ctx.telegram.editMessageText(
         ctx.chat.id,
         messageId,
         undefined,
-        "No more questions available.",
+        `🎉 Exam Finished!\n\nFinal Score: **${finalScore}**\n\nThank you for practicing.\nYou can start again with the menu.`,
+        { parse_mode: "Markdown" },
       );
       return;
     }
 
     const q = questions[index];
 
-    // Question header: use original number if > 0, otherwise just "Question"
     const questionHeader =
       q.number && q.number > 0 ? `Question ${q.number}` : "Question";
 
@@ -119,13 +139,13 @@ async function sendQuestion(ctx, examName, index, messageId) {
       inline_keyboard: q.options.map((opt, i) => [
         {
           text: opt,
-          callback_data: `ans_${examName}_${index}_${i}_${messageId}`,
+          callback_data: `ans_${examName}_${index}_${i}_${messageId}_${correctCount}_${attemptedCount}`,
         },
       ]),
     };
 
     console.log(
-      `[DEBUG] Sending ${questionHeader} (index ${index}) | msgId=${messageId}`,
+      `[DEBUG] Sending ${questionHeader} (index ${index}) | score ${correctCount}/${attemptedCount} | msgId=${messageId}`,
     );
 
     await ctx.telegram.editMessageText(
@@ -143,35 +163,50 @@ async function sendQuestion(ctx, examName, index, messageId) {
   }
 }
 
-// HANDLE ANSWER
+// HANDLE ANSWER – update score and show feedback
 bot.action(/ans_(.+)/, async (ctx) => {
   await ctx.answerCbQuery();
 
   try {
     const parts = ctx.match[1].split("_");
-    if (parts.length !== 4) {
+    if (parts.length !== 6) {
       console.error("[ERROR] Invalid callback_data parts:", parts);
       await ctx.answerCbQuery("Invalid question data.", { show_alert: true });
       return;
     }
 
-    const [examName, indexStr, answerStr, messageIdStr] = parts;
+    const [
+      examName,
+      indexStr,
+      answerStr,
+      messageIdStr,
+      prevCorrectStr,
+      prevAttemptedStr,
+    ] = parts;
 
     const index = parseInt(indexStr, 10);
     const answer = parseInt(answerStr, 10);
     const messageId = parseInt(messageIdStr, 10);
+    let correctCount = parseInt(prevCorrectStr, 10);
+    let attemptedCount = parseInt(prevAttemptedStr, 10);
 
-    if (isNaN(index) || isNaN(answer) || isNaN(messageId) || messageId <= 0) {
-      console.error("[ERROR] Invalid parsed values:", {
-        indexStr,
-        answerStr,
-        messageIdStr,
-      });
+    if (
+      isNaN(index) ||
+      isNaN(answer) ||
+      isNaN(messageId) ||
+      messageId <= 0 ||
+      isNaN(correctCount) ||
+      isNaN(attemptedCount)
+    ) {
+      console.error("[ERROR] Invalid parsed values");
       await ctx.answerCbQuery("Something went wrong. Try restarting.", {
         show_alert: true,
       });
       return;
     }
+
+    // Increment attempted count (every answer counts as an attempt)
+    attemptedCount += 1;
 
     const questions = exams[examName];
     if (!questions || !Array.isArray(questions)) {
@@ -186,6 +221,12 @@ bot.action(/ans_(.+)/, async (ctx) => {
     }
 
     const isCorrect = answer === q.correct;
+
+    // Update correct count if answer is right
+    if (isCorrect) {
+      correctCount += 1;
+    }
+
     const userChoice = q.options[answer] || "(invalid option)";
     const correctAnswer = q.options[q.correct];
 
@@ -195,29 +236,23 @@ bot.action(/ans_(.+)/, async (ctx) => {
 
     feedback += `\n\nYour answer: **${userChoice}**`;
 
-    // Optional explanation support
-    // if (q.explanation) {
-    //   feedback += `\n\n**Explanation:**\n${q.explanation}`;
-    // }
-
-    // Use same header logic for feedback screen
     const questionHeader =
       q.number && q.number > 0 ? `Question ${q.number}` : "Question";
 
-    const displayText = `${questionHeader}\n\n${q.question}\n\nA. ${q.options[0]}\nB. ${q.options[1]}\nC. ${q.options[2]}\nD. ${q.options[3]}\n\n${feedback}`;
+    const displayText = `${questionHeader}\n\n${q.question}\n\nA. ${q.options[0]}\nB. ${q.options[1]}\nC. ${q.options[2]}\nD. ${q.options[3]}\n\n${feedback}\n\n**Score: ${correctCount} / ${attemptedCount}**`;
 
     const keyboard = {
       inline_keyboard: [
         [
           {
             text: "➡️ Next Question",
-            callback_data: `next_${examName}_${index + 1}_${messageId}`,
+            callback_data: `next_${examName}_${index + 1}_${messageId}_${correctCount}_${attemptedCount}`,
           },
         ],
         [
           {
             text: "🏁 End Exam",
-            callback_data: `end_${examName}_${messageId}`,
+            callback_data: `end_${examName}_${messageId}_${correctCount}_${attemptedCount}`,
           },
         ],
       ],
@@ -239,21 +274,37 @@ bot.action(/ans_(.+)/, async (ctx) => {
   }
 });
 
-// NEXT QUESTION
+// NEXT QUESTION – pass current score forward
 bot.action(/next_(.+)/, async (ctx) => {
   await ctx.answerCbQuery();
 
   try {
     const parts = ctx.match[1].split("_");
-    if (parts.length !== 3) return;
+    if (parts.length !== 5) return;
 
-    const [examName, nextIndexStr, messageIdStr] = parts;
+    const [examName, nextIndexStr, messageIdStr, correctStr, attemptedStr] =
+      parts;
     const nextIndex = parseInt(nextIndexStr, 10);
     const messageId = parseInt(messageIdStr, 10);
+    const correctCount = parseInt(correctStr, 10);
+    const attemptedCount = parseInt(attemptedStr, 10);
 
-    if (isNaN(nextIndex) || isNaN(messageId)) return;
+    if (
+      isNaN(nextIndex) ||
+      isNaN(messageId) ||
+      isNaN(correctCount) ||
+      isNaN(attemptedCount)
+    )
+      return;
 
-    await sendQuestion(ctx, examName, nextIndex, messageId);
+    await sendQuestion(
+      ctx,
+      examName,
+      nextIndex,
+      messageId,
+      correctCount,
+      attemptedCount,
+    );
   } catch (err) {
     console.error("Next question error:", err);
     await ctx.answerCbQuery("Could not load next question.", {
@@ -262,24 +313,28 @@ bot.action(/next_(.+)/, async (ctx) => {
   }
 });
 
-// END EXAM EARLY
+// END EXAM EARLY – show final score
 bot.action(/end_(.+)/, async (ctx) => {
   await ctx.answerCbQuery();
 
   try {
     const parts = ctx.match[1].split("_");
-    if (parts.length !== 2) return;
+    if (parts.length < 2) return;
 
-    const [examName, messageIdStr] = parts;
-    const messageId = parseInt(messageIdStr, 10);
+    const examName = parts[0];
+    const messageId = parseInt(parts[1], 10);
+    const correctCount = parts.length > 2 ? parseInt(parts[2], 10) : 0;
+    const attemptedCount = parts.length > 3 ? parseInt(parts[3], 10) : 0;
 
     if (isNaN(messageId)) return;
+
+    const finalScore = `${correctCount} / ${attemptedCount}`;
 
     await ctx.telegram.editMessageText(
       ctx.chat.id,
       messageId,
       undefined,
-      "🏁 **Exam ended early.**\n\nYou can start a new session anytime with /start or the menu button.",
+      `🏁 **Exam ended early.**\n\nFinal Score: **${finalScore}**\n\nYou can start a new session anytime with /start or the menu button.`,
       { parse_mode: "Markdown" },
     );
   } catch (err) {
