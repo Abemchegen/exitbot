@@ -61,9 +61,9 @@ bot.action("model_exam", async (ctx) => {
   await ctx.reply("Select Model Exit Exam", {
     reply_markup: {
       inline_keyboard: [
-        [{ text: "AASTU Exit Exam 2", callback_data: "start_modelaastu2" }],
-        [{ text: "AASTU Exit Exam", callback_data: "start_modelaastu" }],
-        [{ text: "Model Exit Exam", callback_data: "start_model2" }],
+        [{ text: "AASTU Model Exit Exam 1", callback_data: "start_modelaastu2" }],
+        [{ text: "AASTU Model Exit Exam 2", callback_data: "start_modelaastu" }],
+        [{ text: "Model Exit Exam 1", callback_data: "start_model2" }],
         [{ text: "Model Exit Exam 2", callback_data: "start_model" }],
       ],
     },
